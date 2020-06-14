@@ -288,5 +288,9 @@ for_window [class="^.*"] border pixel 4
 
 #compton
 exec_always --no-startup-id picom -F
+
+#dunst
 exec_always --no-startup-id dunst
+
+#flameshot
 exec_always --no-startup-id flameshot
