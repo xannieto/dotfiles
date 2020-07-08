@@ -231,9 +231,11 @@ ramp-volume-2 = 
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+;thermal-zone = 2
 warn-temperature = 60
 interval = 0.5
+
+hwon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp2_input
 
 format = <ramp> <label>
 format-underline = #f50a4d

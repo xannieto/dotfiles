@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $terminal konsole
+set $terminal urxvt
 set $dir_imaxes /media/datos/Fondos
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -229,11 +229,12 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym $mod+shift+x exec blurlock
 #bindsym Print exec spectacle
 bindsym Print exec --no-startup-id flameshot gui
-bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec pcmanfm
-bindsym $mod+F3 exec texmaker
-bindsym $mod+F4 exec spotify
+bindsym $mod+F1 exec $terminal -e htop
+bindsym $mod+F2 exec firefox
+bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F4 exec texmaker
 bindsym $mod+F5 exec code
+bindsym $mod+F10 exec spotify
 
 
 # Pulse Audio controls
