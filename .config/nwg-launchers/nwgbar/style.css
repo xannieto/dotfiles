@@ -1,0 +1,33 @@
+#bar {
+    margin: 30px /* affects top/bottom & left/right alignment */
+}
+
+button, image {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    color: #eceff4
+}
+
+button {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px
+}
+
+button:hover {
+    background-color: #4c566a /*rgba (77, 118, 133, 0.65)*/;
+}
+
+button:focus {
+    background-color: #4c566a/*rgba (77, 118, 133, 0.65)*/;
+}
+
+grid {
+	background-color: rgba(46,52,64, 0.75)/*#2e3440*/;
+	border-style: none;
+	border-width: 5px;
+	border-color: #eceff4;
+	border-radius: 5.0
+    /* e.g. for common background to all buttons */
+}

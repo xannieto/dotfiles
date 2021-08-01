@@ -1,0 +1,32 @@
+[
+  {
+    "name": "_Bloquear pantalla",
+    "exec": "swaylock -f -i /media/datos/fondos/374.jpg -s fill",
+    "icon": "/usr/share/icons/Papirus-Dark/symbolic/actions/system-lock-screen-symbolic.svg"
+  },
+  {
+    "name": "_Pechar sesión",
+    "exec": "swaymsg exit",
+    "icon": "/usr/share/icons/Papirus-Dark/symbolic/actions/system-log-out-symbolic.svg"
+  },
+  {
+    "name": "_Reiniciar",
+    "exec": "systemctl reboot",
+    "icon": "/usr/share/icons/Papirus-Dark/symbolic/actions/system-restart-symbolic.svg"
+  },
+  {
+  	"name": "_Suspender",
+	"exec": "swaylock -f -i /media/datos/fondos/374.jpg -s fill && systemctl suspend",
+	"icon": "/usr/share/icons/Papirus-Dark/symbolic/actions/system-suspend-symbolic.svg"
+  },
+  {
+	"name": "_Hibernar",
+	"exec": "swaylock -f -i /media/datos/fondos/374.jpg -s fill && systemctl hibernate",
+	"icon": "/usr/share/icons/Papirus-Dark/symbolic/actions/system-hibernate-symbolic.svg"
+  },
+  {
+    "name": "_Apagar",
+    "exec": "systemctl -i poweroff",
+    "icon": "/usr/share/icons/Papirus-Dark/symbolic/actions/system-shutdown-symbolic.svg"
+  }
+]

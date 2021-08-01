@@ -1,0 +1,25 @@
+* {
+	border-style: none;
+	border-radius: 0;
+	border-color: none;
+}
+
+#window {
+	background-color: rgba(38, 47, 50, 0.75);
+	padding: 10em;
+	font-family: Hack;
+	font-weight: bold;
+	font-size: 16pt;
+	color: #bebebe
+}
+
+#input {
+	background-color: rgba(20, 25, 27, 0.75);
+	padding: 1.0em;
+	color: #bebebe
+}
+
+#entry:selected {
+	background-color: rgba(23, 125, 165);
+	color: #ffffff
+}
