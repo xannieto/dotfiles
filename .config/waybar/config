@@ -93,9 +93,9 @@
     "network": {
         "interval": 5,
         "format-wifi": " ", // Icon: wifi
-        "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-ethernet": " {ifname}", //: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": " ",
-        "tooltip-format": "{ifname}: {ipaddr}"
+        "tooltip-format": "{ifname} : {ipaddr}"
     },
 
     "sway/mode": {
@@ -108,11 +108,11 @@
         "disable-scroll": false,
         "format": "{name}: {icon}",
         "format-icons": {
-            "1": "", 
+            "1": "", 
             "2": "", 
-            "3": "",
+            "3": "",
             "4": "",
-            "5": "",
+            "5": "",
 			"6": "",
 			"7": "",
 			"8": "",

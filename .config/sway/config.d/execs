@@ -1,0 +1,14 @@
+#
+# Execs
+#
+    # Screen colour temperature
+    exec --no-startup-id gammastep -c ~/.config/gammastep/gammastep.conf
+
+    # Launcher
+    exec --no-startup-id ulauncher
+
+    # Wallpaper
+    exec ~/.azotebg
+ 
+    # Notifications
+    exec mako

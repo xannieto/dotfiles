@@ -48,7 +48,7 @@
 
 /* The whole bar */
 #waybar {
-    background: rgba(46,52,64, 0.90);
+    background: rgba(46,52,64, 1.0);
     color: #eceff4;
     font-family: "Noto Sans Mono", "Font Awesome 5 Free Solid", monospace;
     font-size: 14pt;
