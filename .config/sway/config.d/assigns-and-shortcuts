@@ -1,27 +1,27 @@
 #
 # Assigns
-#
-    assign [app_id="Alacritty"] 1
-    assign [class="firefox"] 2
-    assign [app_id="Google-chrome"] 2
-    assign [app_id="brave"] 2
-    assign [app_id="org.gnome.Nautilus"] 3
-    assign [app_id="org.kde.dolphin"] 3
-    assign [app_id="thunar"] 3
-    assign [class="TeXstudio"] 4
-    assign [app_id="libreoffice-startcenter"] 4
-    assign [class="code-oss"] 5
-    assign [app_id="gedit"] 5
-    assign [app_id="evince"] 6
-    assign [app_id="org.kde.okular"] 6
-    assign [app_id="qBittorrent"] 7
-    assign [app_id="Qemu-system-x86_64"] 8
-    assign [app_id="VirtualBox Manager"] 8
-    assign [class="TelegramDesktop"] 9
-    assign [app_id="evolution"] 9
-    assign [app_id="vlc"] 9
-    assign [class="Spotify"] 10
-    for_window [class="Spotify"] move to workspace number 10
+#   
+    assign [app_id="Alacritty"] $ws1
+    assign [class="firefox"] $ws2
+    assign [app_id="Google-chrome"] $ws2
+    assign [app_id="brave"] $ws2
+    assign [app_id="org.gnome.Nautilus"] $ws3
+    assign [app_id="org.kde.dolphin"] $ws3
+    assign [app_id="thunar"] $ws3
+    assign [class="TeXstudio"] $ws4
+    assign [app_id="libreoffice-startcenter"] $ws4
+    assign [class="code-oss"] $ws5
+    assign [app_id="gedit"] $ws5
+    assign [app_id="evince"] $ws6
+    assign [class="okular"] $ws6
+    assign [app_id="qBittorrent"] $ws7
+    assign [app_id="Qemu-system-x86_64"] $ws8
+    assign [app_id="VirtualBox Manager"] $ws8
+    assign [class="TelegramDesktop"] $ws9
+    assign [app_id="evolution"] $ws9
+    assign [app_id="vlc"] $ws9
+    assign [class="Thunderbird"] $ws9
+    assign [class="Spotify"] $ws10
 
 #
 # Custom shortcuts
@@ -29,8 +29,23 @@
     #bindsym Print exec --no-startup-id flameshot gui
     bindsym $mod+F1 exec $term -e htop
     bindsym $mod+F2 exec firefox
-    #bindsym $mod+F3 exec nautilus
+    #bindsym $mod+F3 exec thunar
     bindsym $mod+F3 exec dolphin
     bindsym $mod+F4 exec texstudio
     bindsym $mod+F5 exec code
     bindsym $mod+F10 exec spotify
+
+#
+# Fixes for some apps
+#
+	for_window [window_role="pop-up"] floating enable
+    for_window [window_role="bubble"] floating enable
+    for_window [window_role="task_dialog"] floating enable
+    for_window [window_role="Preferences"] floating enable
+    for_window [window_type="dialog"] floating enable
+    for_window [window_type="menu"] floating enable
+    for_window [window_role="About"] floating enable	
+    for_window [app_id="ulauncher"] floating enable
+    #for_window [window_type="floating_con"] floating enable
+    for_window [app_id="ulauncher"] border none
+    for_window [class="Spotify"] move to workspace number $ws10

@@ -11,9 +11,9 @@
     // Global configuration
     // -------------------------------------------------------------------------
 
-    "layer": "top",
+    "layer": "bottom",
 
-    "position": "top",
+    "position": "bottom",
 
     // If height property would be not present, it'd be calculated dynamically
     "height": 32,
@@ -74,7 +74,7 @@
 
     "cpu": {
         "interval": 5,
-        "format": " {usage}% ({load})", // Icon: microchip
+        "format": " {usage}%", // Icon: microchip
         "states": {
           "warning": 60,
           "critical": 85
@@ -125,7 +125,7 @@
     },
 
     "pulseaudio": {
-        //"scroll-step": 1,
+        "scroll-step": 1,
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}%",
         "format-muted": "婢",
