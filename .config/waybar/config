@@ -93,7 +93,7 @@
     "network": {
         "interval": 5,
         "format-wifi": " ", // Icon: wifi
-        "format-ethernet": " {ifname}", //: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-ethernet": "", //: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": " ",
         "tooltip-format": "{ifname} : {ipaddr}"
     },

@@ -13,7 +13,7 @@
     assign [class="code-oss"] 5
     assign [app_id="gedit"] 5
     assign [app_id="evince"] 6
-    assign [class="okular"] 6
+    assign [app_id="org.kde.okular"] 6
     assign [app_id="qBittorrent"] 7
     assign [app_id="Qemu-system-x86_64"] 8
     assign [app_id="VirtualBox Manager"] 8
