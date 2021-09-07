@@ -18,6 +18,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'lervag/vimtex'
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -55,11 +56,13 @@ nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " temas
 " colorscheme gruvbox-material
-colorscheme onehalfdark
+colorscheme nord
 set t_Co=256
 set cursorline
-let g:airline_theme='onehalfdark'
 
+" vim airline
+let g:airline_theme='nord'
+let g:airline#extensions#tabline#enabled = 1
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

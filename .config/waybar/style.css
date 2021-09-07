@@ -48,8 +48,8 @@
 
 /* The whole bar */
 #waybar {
-    background: rgba(46,52,64, 0.90);
-    color: #eceff4;
+    background: #1f222d;
+    color: #81a1c1;
     font-family: "Noto Sans Mono", "Font Awesome 5 Free Solid", monospace;
     font-size: 14pt;
 }
@@ -156,7 +156,7 @@
 }
 
 #pulseaudio.muted {
-    background-color : #88c0d0;
+    background-color : #4c566a;
 }
 
 #custom-spotify {
@@ -185,12 +185,12 @@
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #4c566a;
+    color: #81a1c1;
 }
 
 #workspaces button.focused {
     border-color: #5e81ac;
-    color: #eceff4;
+    color: #81a1c1 ;
 }
 
 #workspaces button.hover {
@@ -199,5 +199,5 @@
 
 #workspaces button.urgent {
     border-color: #c9545d;
-    color: #bf616a;
+    color: #ee829f;
 }

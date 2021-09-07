@@ -16,12 +16,12 @@
   },
   {
   	"name": "_Suspender",
-	"exec": "swaylock -f -i /media/datos/fondos/374.jpg -s fill && systemctl suspend",
+	"exec": "swaylock -f -i /media/datos/fondos/369.jpg -s fill && systemctl suspend",
 	"icon": "/usr/share/icons/Papirus-Dark/symbolic/actions/system-suspend-symbolic.svg"
   },
   {
 	"name": "_Hibernar",
-	"exec": "swaylock -f -i /media/datos/fondos/374.jpg -s fill && systemctl hibernate",
+	"exec": "swaylock -f -i /media/datos/fondos/369.jpg -s fill && systemctl hibernate",
 	"icon": "/usr/share/icons/Papirus-Dark/symbolic/actions/system-hibernate-symbolic.svg"
   },
   {
