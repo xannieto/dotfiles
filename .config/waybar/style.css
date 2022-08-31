@@ -41,163 +41,82 @@
 * {
     border: none;
     border-radius: 0;
+    font-family: NotoSansMono Nerd Font;
+    font-size: 12pt;
     min-height: 0;
-    margin: 0;
-    padding: 0;
 }
 
-/* The whole bar */
-#waybar {
-    background: #1f222d;
-    color: #81a1c1;
-    font-family: "Noto Sans Mono", "Font Awesome 5 Free Solid", monospace;
-    font-size: 14pt;
+window#waybar {
+    background: #c0c0c0;
+    color: #708090;
 }
 
-/* Each module */
-#battery,
-#backlight,
-#clock,
-#cpu,
-#custom-keyboard-layout,
-#memory,
-#mode,
-#network,
-#pulseaudio,
-#temperature,
-#tray,
-#idle_inhibitor {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-
-/* -----------------------------------------------------------------------------
- * Module styles
- * -------------------------------------------------------------------------- */
-
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.warning {
-    color: rgb(206, 127, 0);
-}
-
-#battery.critical {
-    color: rgb(195, 27, 4);
-}
-
-#battery.charging {
-    /*background-color: #5e81ac;*/
-}
-
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#clock {
-    /*font-weight: bold*/;
-}
-
-#cpu {
-  /* No styles */
-}
-
-#cpu.warning {
-    background-color: #d08770;
-}
-
-#cpu.critical {
-    background-color: #b48ead;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: #d08770;
-}
-
-#memory.critical {
-    color: #b48ead;
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#mode {
-    background: #8fbcbb;
-    border-top: 2px solid #eceff4;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-}
-
-#network {
-    /* No styles */
-}
-
-#network.disconnected {
-    color: #d08770;
-}
-
-#pulseaudio {
-    /* No styles */
-}
-
-#pulseaudio.muted {
-    background-color : #4c566a;
-}
-
-#custom-spotify {
-    color: rgb(102, 220, 105);
-}
-
-#temperature {
-    /* No styles */
-}
-
-#temperature.critical {
-    background-color: #bf616a;
-}
-
-#tray {
-    /* No styles */
-}
-
-#window {
-    font-weight: bold;
+#workspaces {
+	margin: 0px;
+	margin-left: 0px;
+	border-radius: 0px;
+    /*background-color: #4b4c53;*/
 }
 
 #workspaces button {
-    border-top: 2px solid transparent;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #81a1c1;
+    padding: 2px 10px;
+    color: white;
 }
 
 #workspaces button.focused {
-    border-color: #5e81ac;
-    color: #81a1c1 ;
+    color: #c0c0c0;
+    background-color: #778899;
+    border-radius: 0px;
 }
 
-#workspaces button.hover {
-    border-color: #555555;
+#workspaces button:hover {
+	background-color: #708090;
+	color: #24283b;
+	border-radius: 0px;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #ee829f;
+    background-color: #c4aead;
+    border-radius: 0px
+}
+
+/*#custom-date,*/#custom-media, #mode, #clock, #battery, #pulseaudio, #network, #cpu, #backlight, #memory, #tray, #idle_inhibitor, #temperature {
+	/*background-color: #24283b;*/
+	padding: 5px 10px;
+}
+
+#custom-media {
+    background-color: #66cc99;
+}
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    background-color: #9ece6a;
+    color: #ffffff;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+    border-radius: 0px 5px 5px 5px;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
 }

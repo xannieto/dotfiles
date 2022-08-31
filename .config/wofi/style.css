@@ -1,25 +1,23 @@
 * {
-	border-style: none;
-	border-radius: 0;
-	border-color: none;
+    font-family: "DejaVu Sans Mono";
 }
 
-#window {
-	background-color: rgba(38, 47, 50, 0.75);
-	padding: 10em;
-	font-family: Hack;
-	font-weight: bold;
-	font-size: 16pt;
-	color: #bebebe
+window {
+    border-radius: 5px;
+    background-color: #c0c0c0;
 }
 
 #input {
-	background-color: rgba(20, 25, 27, 0.75);
-	padding: 1.0em;
-	color: #bebebe
+    border-radius: 5px 5px 0px 0px;
+    background-color: #708090;
+    color: #c0c0c0;
+}
+
+#entry {
+    color: #708090;
 }
 
 #entry:selected {
-	background-color: rgba(23, 125, 165);
-	color: #ffffff
+    background-color: #708090;
+    color: #c0c0c0;
 }

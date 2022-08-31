@@ -9,7 +9,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'sainnhe/gruvbox-material'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
@@ -18,7 +17,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'lervag/vimtex'
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -55,13 +53,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " temas
-" colorscheme gruvbox-material
-colorscheme nord
+colorscheme gruvbox-material
+" colorscheme nord
 set t_Co=256
-set cursorline
+" set cursorline
 
 " vim airline
-let g:airline_theme='nord'
+let g:airline_theme='gruvbox_material'
 let g:airline#extensions#tabline#enabled = 1
 
 if exists('+termguicolors')
@@ -70,7 +68,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" personalizacions propias
+" customized
 set ruler
 set autoindent
 set ignorecase
@@ -80,4 +78,33 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set encoding=utf8
 set laststatus=2
 set wildmenu
-syntax on
+
+syntax enable
+
+
+" vimtex
+filetype plugin indent on
+
+" This enables Vim's and neovim's syntax-related features. Without this, some
+" VimTeX features will not work (see ":help vimtex-requirements" for more
+" info).
+
+" Viewer options: One may configure the viewer either by specifying a built-in
+" viewer method:
+"let g:vimtex_view_method = 'zathura'
+
+" Or with a generic interface:
+let g:vimtex_view_general_viewer = 'evince'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
+
+" VimTeX uses latexmk as the default compiler backend. If you use it, which is
+" strongly recommended, you probably don't need to configure anything. If you
+" want another compiler backend, you can change it as follows. The list of
+" supported backends and further explanation is provided in the documentation,
+" see ":help vimtex-compiler".
+let g:vimtex_compiler_method = 'latexmk'
+
+" Most VimTeX mappings rely on localleader and this can be changed with the
+" following line. The default is usually fine and is the symbol "\".
+let maplocalleader = ","

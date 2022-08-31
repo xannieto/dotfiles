@@ -16,30 +16,39 @@
     set $right l
     
     # Your preferred terminal emulator
-    set $term alacritty
-    
+    set $term footclient 
+
     # Your preferred application launcher
     # Note: pass the final command to swaymsg so that the resulting window can be opened
-    # on the original workspace that the command was run on.
-    #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-    #set $menu wofi --show run --style=$HOME/.config/wofi/style.css
-    set $menu ulauncher-toggle --no-window-shadow
-    set $lock_wallpaper /media/datos/fondos/369.jpg
-    set $lock swaylock -f -i $lock_wallpaper -s fill --indicator-radius 80
+    #       on the original workspace that the command was run on.
+
+    #set $menu wofi --conf ~/.config/wofi/config
+    set $menu rofi -show drun -config ~/.config/rofi/config.rasi
+    set $wallpaper ~/.config/sway/background
+    set $lock gtklock -d -s $HOME/.config/gtklock/style.css
+    #set $lock swaylock -f -i $wallpaper -s fill --indicator-radius 80
 
     # Enable xwayland
     xwayland enable
+    exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+    exec hash dbus-update-activation-environment 2>/dev/null && \
+        dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+    #exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 ### Output configuration
-    output HDMI-A-1 resolution 1920x1080 position 0,0 
-    font pango: Cascadia Code 12
+    #output * bg $wallpaper fill
+    output eDP-1 resolution 1920x1080 position 0,0
+   
+    # family font
+    font pango: DejaVu Sans Mono 12 
     # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
-exec --no-startup-id swayidle -w \
-          timeout 600 '$lock' \
-          timeout 1200 'swaymsg "output * dpms off" && systemctl suspend' resume 'swaymsg "output * dpms on"' \
-          before-sleep '$lock'
+    exec --no-startup-id swayidle -w \
+                    timeout 600 '$lock' \
+                    timeout 1200 'swaymsg "output * dpms off" && systemctl suspend' resume 'swaymsg "output * dpms on"' \
+                    before-sleep '$lock'
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -48,32 +57,16 @@ exec --no-startup-id swayidle -w \
 ### Input configuration
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-	
-	# keyboard
-	input "1:1:AT_Translated_Set_2_keyboard" {
-		xkb_layout es
-	}
-    
-    input "3141:30308:SONiX_USB_DEVICE_Keyboard" {
-        xkb_layout es
-    }  
 
-    input "3141:30308:SONiX_USB_DEVICE" {
+    input type:keyboard {
         xkb_layout es
-    }  
-	# touchpad
-	input "1267:12458:ELAN0300:00_04F3:30AA_Touchpad" {
+    }
+
+    input type:touchpad {
 		middle_emulation enabled
 		dwt enabled
 		tap enabled
 		natural_scroll enabled
-	} 
-    
-    input "2:14:ETSP/2_Elantech_Touchpad" {
-        middle_emulation enabled
-        dwt enabled
-        tap enabled
-        natural_scroll enabled
     }
 
 ### Key bindings
@@ -103,10 +96,12 @@ exec --no-startup-id swayidle -w \
 	bindsym $mod+Shift+x exec $lock
 
 	# Logout
-	bindsym $mod+x exec nwgbar -o 0.35 -b #2e3440
+	#bindsym $mod+x exec wlogout -p layer-shell -c 10 -r 10
+	bindsym $mod+x exec rofi -show powermenu -modi powermenu:$HOME/.local/bin/rofi-power-menu.bash -font "DejaVu Sans Mono"
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
 #
 # Moving around:
 #
@@ -115,6 +110,7 @@ exec --no-startup-id swayidle -w \
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
+    
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -216,6 +212,7 @@ exec --no-startup-id swayidle -w \
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+
 #
 # Resizing containers:
 #
@@ -241,11 +238,55 @@ exec --no-startup-id swayidle -w \
     }
     bindsym $mod+r mode "resize"
 
+
+# 
+# Screen capture
+#
+#
+#set $mode_screenshot (a)ctive, a(r)ea, (o)utput, (s)creen, (w)indow
+#
+#bindsym Print mode "$mode_screenshot"
+#
+#mode "$mode_screenshot" {
+#    bindsym a exec --no-startup-id $HOME/.local/bin/screenshot.sh active, mode "default"
+#    bindsym r exec --no-startup-id $HOME/.local/bin/screenshot.sh area, mode "default"
+#    bindsym o exec --no-startup-id $HOME/.local/bin/screenshot.sh output, mode "default"
+#    bindsym s exec --no-startup-id $HOME/.local/bin/screenshot.sh screen, mode "default"
+#    bindsym w exec --no-startup-id $HOME/.local/bin/screenshot.sh window, mode "default"
+#
+#    # Return to default mode
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#}
+
+bindsym --release Print exec --no-startup-id flameshot gui
+
+#
+# Gaps
+#
+    #smart_gaps on
+    #smart_borders on
+    #gaps inner 10
+    #gaps outer 0
+
 #
 # Brightness
 #
-    bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
-    bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
+    #bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -S "$(light -G | awk '{ print int(($1 + .72) * 1.4) }')"
+    #bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -S "$(light -G | awk '{ print int($1 / 1.4) }')"
+
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set +5%
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+
+#
+# Multimedia
+#
+    bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% 
+    bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2%
+    bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle 
+    bindsym --locked XF86AudioPlay exec playerctl play-pause
+    bindsym --locked XF86AudioNext exec playerctl next
+    bindsym --locked XF86AudioPrev exec playerctl previous
 
 #
 # Status Bar:
@@ -264,16 +305,90 @@ exec --no-startup-id swayidle -w \
 
     # Window color settings
     # class                 border  backgr. text    indicator
-    client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
-    client.unfocused        #2e3440 #2e3440 #888888 #2e3440
-    client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
-    client.placeholder      #2e3440 #2e3440 #888888 #2e3440
-    client.urgent           #900000 #900000 #ffffff #900000
+    client.focused          #778899 #778899 #c0c0c0 #778899
+    client.unfocused        #c0c0c0 #c0c0c0 #778899 #c0c0c0
+    client.focused_inactive #c0c0c0 #c0c0c0 #778899 #c0c0c0
+    client.placeholder      #c0c0c0 #c0c0c0 #778899 #c0c0c0
+    client.urgent           #c4aead #c4aead #c0c0c0 #c4aead
 
-    client.background       #242424
+    client.background       #778899
+
+#
+# Assigns
+# swaymsg -t get_tree | grep -E "app_id|class"
+    assign [app_id="foot"] $ws1
+    assign [app_id="gnome-terminal-server"] $ws1
+    assign [class="firefox"] $ws2
+    assign [app_id="org.qutebrowser.qutebrowser"] $ws2
+    assign [class="Brave-browser"] $ws2
+    assign [app_id="org.gnome.Nautilus"] $ws3
+    assign [app_id="texstudio"] $ws4
+    assign [app_id="libreoffice-startcenter"] $ws4
+    assign [class="code-oss"] $ws5
+    assign [app_id="gedit"] $ws5
+    assign [app_id="evince"] $ws6
+    assign [app_id="qBittorrent"] $ws7
+    assign [app_id="Qemu-system-x86_64"] $ws8
+    assign [app_id="VirtualBox Manager"] $ws8
+    assign [class="TelegramDesktop"] $ws9
+    assign [class="discord"] $ws9
+    assign [app_id="evolution"] $ws9
+    assign [app_id="vlc"] $ws9
+    assign [class="Spotify"] $ws10
+    assign [class="CloudCompare"] $ws10
+
+#
+# Custom shortcuts
+#
+    bindsym $mod+F1 exec $term -e htop
+    bindsym $mod+F2 exec firefox
+    bindsym $mod+F3 exec nautilus
+    bindsym $mod+F4 exec texstudio
+    bindsym $mod+F5 exec code
+    bindsym $mod+F10 exec spotify
+
+#
+# Fixes for some apps
+#
+	for_window [window_role="pop-up"] floating enable
+    for_window [window_role="bubble"] floating enable
+    for_window [window_role="task_dialog"] floating enable
+    for_window [window_role="Preferences"] floating enable
+    for_window [window_role="About"] floating enable	
+    
+    for_window [window_type="dialog"] floating enable
+    for_window [window_type="menu"] floating enable
+    for_window [window_type="popup_menu"] floating enable
+    for_window [window_type="tooltip"] floating enable
+    for_window [window_type="splash"] floating enable
+    for_window [window_type="notification"] floating enable
+    for_window [class="Spotify"] move to workspace number $ws10
+
+#
+# Execs
+#
+    # Screen colour temperature
+    exec --no-startup-id gammastep -c ~/.config/gammastep/gammastep.conf
+
+    # Foot server
+    exec --no-startup-id foot --server
+
+    # Wallpaper
+    exec ~/.azotebg
+ 
+    # Notifications
+    exec --no-startup-id mako
+
+    # Autotiling
+    exec --no-startup-id autotiling
+
+    # Screenshot tool
+    exec --no-startup-id flameshot
+
+    # Gnome GTK themes
+    #exec_always ~/.local/bin/gtk-theme-sway.sh
+
 #
 # Includes
 #
 include /etc/sway/config.d/*
-include ~/.config/sway/config.d/*
-

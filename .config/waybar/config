@@ -22,15 +22,18 @@
         "sway/workspaces",
         "sway/mode"
     ],
+
+    "modules-center": ["custom/media"],
+
     "modules-right": [
+        "tray",
         "cpu",
         "memory",
         "temperature",
-        "backlight",
-		"battery",
+        //"backlight",
+		//"battery",
         "network",
         "pulseaudio",
-        "tray",
         "idle_inhibitor",
         "clock"
     ],
@@ -46,9 +49,10 @@
             "critical": 10
         },
         // Connected to AC
-        "format": " {icon} {capacity}%", // Icon: bolt
+        "format": "{icon}  {capacity}%", // Icon: bolt
         // Not connected to AC
-        "format-discharging": "{icon} {capacity}%",
+        "format-discharging": "{icon}  {capacity}%",
+        "format-charging": "{icon}    {capacity}%",
         "format-icons": [
             "", // Icon: battery-full
             "", // Icon: battery-three-quarters
@@ -62,19 +66,19 @@
 	"backlight": {
     	"device": "intel_backlight",
     	"format": "{icon} {percent}%",
-    	"format-icons": ["","", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+    	"format-icons": ["","","","","","","","","","","","","","",""]
 	},
 
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %-d %h %-H:%M}",
+        "format": "{:%a %d, %H:%M}",
         "on-click": "wl-copy $(date '+%Y-%m-%d')",
         "on-click-right": "wl-copy $(date '+%a %-d %h %H.%M')",
     },
 
     "cpu": {
         "interval": 5,
-        "format": " {usage}%", // Icon: microchip
+        "format": "cpu: {usage}%", // Icon: microchip
         "states": {
           "warning": 60,
           "critical": 85
@@ -83,7 +87,7 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%", // Icon: memory
+        "format": "mem: {}%", // Icon: memory
         "states": {
             "warning": 70,
             "critical": 90
@@ -92,10 +96,10 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": " ", // Icon: wifi
-        "format-ethernet": "", //: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": " ",
-        "tooltip-format": "{ifname} : {ipaddr}"
+        "format-wifi": "wifi: {ifname} ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": "eth: {ifname}", //: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "x",
+        "tooltip-format": "{essid}: {ipaddr}"
     },
 
     "sway/mode": {
@@ -106,9 +110,21 @@
     "sway/workspaces": {
         "all-outputs": false,
         "disable-scroll": false,
-        "format": "{name}: {icon}",
+        "format": "{icon}",
+        /*"persistent_workspaces": {
+            "1": [], 
+            "2": [], 
+            "3": [],
+            "4": [],
+            "5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+        },*/
         "format-icons": {
-            "1": "", 
+            "1": "", 
             "2": "", 
             "3": "",
             "4": "",
@@ -122,6 +138,19 @@
             "focused": "",
             "default": ""
         }
+    }, 
+    
+    "custom/media": {
+        "format": "{icon} {}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
     },
 
     "pulseaudio": {
@@ -136,15 +165,16 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "奔","墳", ""]
+            "default": ["奄", "奔","墳"]
         },
         "on-click": "pavucontrol"
     },
 
     "temperature": {
-      "critical-threshold": 75,
-      "interval": 5,
-      "format": "{icon} {temperatureC}°C",
+      "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input",
+      "critical-threshold": 80,
+      "interval": 3,
+      "format": "t: {icon} {temperatureC}°C",
       "format-icons": [
           "", // Icon: temperature-empty
           "", // Icon: temperature-quarter
