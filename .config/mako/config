@@ -1,0 +1,13 @@
+sort=-time
+layer=overlay
+width=300
+height=110
+border-size=2
+border-radius=4
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=0
+background-color=#212121
+border-color=#FAFAFA
+text-color=#FAFAFA
+font=CaskaydiaCove Nerd Font 14

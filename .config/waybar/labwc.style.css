@@ -1,0 +1,106 @@
+@define-color base01 #2b454f;
+@define-color base02 #fafafa;
+@define-color base03 #4b6169;
+@define-color base04 #778899;
+
+/* Reset all styles */
+
+* {
+    transition: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+#waybar {
+    font-family: 'Symbols Nerd Font Mono', monospace; 
+    font-size: 1.1em;
+    font-weight: normal;
+    min-height: 0;
+    background: @base01;
+}
+
+#workspaces {
+	margin: 0px 4px;
+}
+
+#workspaces button {
+    padding: 0 12px;
+    color: @base04;
+}
+
+#workspaces button.focused {
+    color: @base02;
+    font-weight: bold;
+    background-color: @base03;
+}
+
+#workspaces button:hover {
+	color: #FAFAFA;
+}
+
+#workspaces button.urgent {
+    color: #c4aead;
+    font-weight: bold;
+}
+
+#tray * {
+  padding: 0 6px;
+}
+
+#tray *:first-child {
+  border-left: none;
+}
+
+#custom-media,
+#custom-notification,
+#mode,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#backlight,
+#memory,
+#tray,
+#idle_inhibitor,
+#temperature,
+#custom-scratchpad_indicator {
+	padding: 0 6px;
+    color: @base02;
+}
+
+#custom-media {
+    background-color: #66cc99;
+}
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    background-color: #9ece6a;
+    color: #ffffff;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}

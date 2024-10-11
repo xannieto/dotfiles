@@ -1,0 +1,9 @@
+XDG_MENU_PREFIX=arch-
+GTK_USE_PORTAL=1
+MOZ_ENABLE_WAYLAND=1
+_JAVA_AWT_WM_NONREPARENTING=1
+_JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+XDG_CURRENT_DESKTOP=sway
+XDG_SESSION_TYPE=wayland
+SDL_VIDEODRIVER=wayland
+QT_QPA_PLATFORMTHEME=qt6ct

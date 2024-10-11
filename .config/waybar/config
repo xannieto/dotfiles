@@ -1,0 +1,251 @@
+// =============================================================================
+//
+// Waybar configuration
+//
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+//
+// =============================================================================
+
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+
+    "layer": "bottom",
+
+    "position": "bottom",
+
+    // If height property would be not present, it'd be calculated dynamically
+    "height": 32,
+
+    "modules-left": [
+        "sway/mode",
+        "cpu",
+        "memory",
+        "temperature"
+    ],
+
+    "modules-center": ["custom/media", "sway/workspaces"],
+
+    "modules-right": [
+        "tray",
+        "custom/notification",
+        "custom/scratchpad_indicator",
+        //"backlight",
+		//"battery",
+        //"network",
+        "pulseaudio",
+        "idle_inhibitor",
+        "clock"
+    ],
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+    
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        // Connected to AC
+        "format": "{icon}  {capacity}%", // Icon: bolt
+        // Not connected to AC
+        "format-discharging": "{icon}  {capacity}%",
+        "format-charging": "{icon}    {capacity}%",
+        "format-icons": [
+            "", // Icon: battery-full
+            "", // Icon: battery-three-quarters
+            "", // Icon: battery-half
+            "", // Icon: battery-quarter
+            ""  // Icon: battery-empty
+        ],
+        "tooltip": true
+    },
+
+	"backlight": {
+    	"device": "intel_backlight",
+    	"format": "{icon} {percent}%",
+    	"format-icons": ["","","","","","","","","","","","","","",""]
+	},
+
+    "clock": {
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "format": "  {:%H:%M}",
+        "locale": "gl_ES.UTF-8",
+        "on-click": "wl-copy $(date '+%Y-%m-%d')",
+        "on-click-right": "wl-copy $(date '+%a %-d %h %H.%M')",
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}%", // Icon: microchip
+        "states": {
+          "warning": 60,
+          "critical": 85
+        }
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+                "dnd-inhibited-none": ""
+            },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "custom/scratchpad_indicator": {
+        "interval": 3,
+        "exec": "swaymsg -t get_tree | jq -r '.nodes[] | select(.name == \"__i3\").nodes[] | select(.name == \"__i3_scratch\").floating_nodes | length'",
+        "format": "{} ",
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'",
+        "tooltip": false
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {}%", // Icon: memory
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": "wifi: {ifname} ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": "eth: {ifname}", //: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "x",
+        "tooltip-format": "{ipaddr}"
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "tooltip": false
+    },
+
+    "sway/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": false,
+        "format": "{icon}",
+        /*"persistent_workspaces": {
+            "1": [], 
+            "2": [], 
+            "3": [],
+            "4": [],
+            "5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+        },*/
+        /*"format-icons": {
+            "1": "", 
+            "2": "󰖟", 
+            "3": "",
+            "4": "",
+            "5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": "",
+			"10": ""
+            //"urgent": "",
+            //"focused": "",
+            //"default": ""
+        }*/
+        "format-icons": {
+            "1": "1", 
+            "2": "2", 
+            "3": "3",
+            "4": "4",
+            "5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8",
+			"9": "9",
+			"10": "10"
+            //"urgent": "",
+            //"focused": "",
+            //"default": ""
+        }
+    }, 
+    
+    "custom/media": {
+        "format": "{icon} {}",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon} {volume}%   {format_source}",
+        "format-source" : " {volume}%",
+        "format-source-muted" : "",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "󰖁  {format_source}",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿", "󰖀","󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "temperature": {
+      "hwmon-path": "/sys/class/hwmon/hwmon3/temp3_input",
+      "critical-threshold": 80,
+      "interval": 3,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": [
+          "", // Icon: temperature-empty
+          "", // Icon: temperature-quarter
+          "", // Icon: temperature-half
+          "", // Icon: temperature-three-quarters
+          ""  // Icon: temperature-full
+      ],
+      "tooltip": true
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    "idle_inhibitor": {
+	    "format": "{icon}",
+	    "format-icons": {
+	        "activated": "",
+	        "deactivated": ""
+	    }
+    }
+
+}

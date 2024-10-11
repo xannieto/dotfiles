@@ -1,0 +1,30 @@
+~/.azotebg >/dev/null 2>&1 &
+
+# screen
+kanshi >/dev/null 2>&1 &
+
+# panel
+waybar --config ~/.config/waybar/labwc.config \
+	--style ~/.config/waybar/labwc.style.css >/dev/null 2>&1 &
+
+# screen locking
+swayidle -w \
+	timeout 600 'swaylock -f -c 000000' \
+	timeout 1200 'wlopm --off \*' \
+	resume 'wlopm --on \*' \
+	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
+
+foot --server >/dev/null 2>&1 &
+
+wl-paste --watch cliphist store &
+
+gammastep -c ~/.config/gammastep/gammastep.conf >/dev/null 2>&1 &
+
+"/usr/lib/polkit-kde-authentication-agent-1" >/dev/null 2>&1 &
+
+swaync >/dev/null 2>&1 &
+
+easyeffects --gapplication-service >/dev/null 2>&1 &
+
+/usr/bin/python3 /usr/bin/ulauncher --hide-window 1 > ~/.logs/ulauncher.log 2>&1 &
+

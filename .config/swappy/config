@@ -1,0 +1,4 @@
+[Default]
+save_dir=$HOME/Pictures/snapshots
+save_filename_format=%Y%m%d-%H%M%S.png
+text_font=sans-serif
