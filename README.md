@@ -5,8 +5,8 @@ This repository contains all dotfiles for my system.
 # Requirements
 
 In order to use this repository, you need to install the following software:
-    - Git
-    - GNU Stow
+- Git
+- GNU Stow
 
 # Installation
 
