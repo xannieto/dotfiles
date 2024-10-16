@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # fix for foot to use ssh
 footssh() {
     if [[ $TERM = "foot" ]]; then
-	    TERM=linux ssh $@
+	    TERM=xterm-256color ssh $@
     else
 	    ssh $@
     fi
