@@ -152,6 +152,7 @@ unset __conda_setup
 ### colors
 alias ls='ls --color=auto'
 alias ip='ip -c'
+alias cal='cal -m --color=always'
 #alias grep='grep --color=auto'
 
 # exports
