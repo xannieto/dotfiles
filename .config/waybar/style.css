@@ -13,7 +13,7 @@
 }
 
 #waybar {
-    font-family: 'Symbols Nerd Font Mono', monospace; 
+    font-family: 'Cascadia Mono', 'Symbols Nerd Font Mono', monospace; 
     font-size: 1.1em;
     font-weight: normal;
     min-height: 0;

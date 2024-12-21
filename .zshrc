@@ -120,7 +120,7 @@ function start_agent {
     echo "succeeded"
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add ~/.ssh/xannieto
+    /usr/bin/ssh-add
 }
 
 # Source SSH settings, if applicable
@@ -133,22 +133,6 @@ else
     start_agent;
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/xan/.local/lib/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/xan/.local/lib/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/xan/.local/lib/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/xan/.local/lib/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
 ### colors
 alias ls='ls --color=auto'
 alias ip='ip -c'
@@ -157,19 +141,5 @@ alias cal='cal -m --color=always'
 
 # exports
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
-export ANDROID_HOME=$HOME/.local/lib/android-sdk
-export ANDROID_SDK_ROOT=$HOME/.local/lib/android-sdk
-export QT_QPA_PLATFORM="wayland;xcb"
-export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
-export FLUTTER_DIR=$HOME/.local/lib/flutter
 export DEV=/media/datos/dev
-
-export PATH=$HOME/fvm/default/bin:$HOME/.local/bin:$FLUTTER_DIR/bin:$HOME/.pub-cache/bin:$PATH
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
-
-# Set up Node Version Manager
-source /usr/share/nvm/init-nvm.sh
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
 
