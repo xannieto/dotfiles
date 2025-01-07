@@ -27,7 +27,7 @@
     #set $menu wofi --show run 
     set $wallpaper ~/.config/sway/background
     #set $lock gtklock -d -s $HOME/.config/gtklock/style.css
-    set $lock swaylock -f -i $wallpaper -s fill --indicator-radius 80
+    set $lock swaylock -f -i #525252 -s fill --indicator-radius 80
 
     # Enable xwayland
     xwayland enable
@@ -38,7 +38,8 @@
 
 ### Output configuration
     #output * bg $wallpaper fill
-    output HDMI-A-1 resolution 1920x1080 position 0,0
+    output eDP-1 resolution 1920x1080 position 0 0
+    output HDMI-A-1 resolution 2560x1440 position 0 -1440
    
     # family font
     font pango: DejaVu Sans Mono 10 
@@ -161,7 +162,9 @@
     # Switch to previous or next workspace
 	bindsym $mod+Ctrl+Left	workspace prev
 	bindsym $mod+Ctrl+Right workspace next
-    
+    bindgesture swipe:right workspace prev
+    bindgesture swipe:left workspace next
+
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number $ws1
     bindsym $mod+Shift+2 move container to workspace number $ws2

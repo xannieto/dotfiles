@@ -13,7 +13,7 @@
 }
 
 #waybar {
-    font-family: 'Symbols Nerd Font Mono', monospace; 
+    font-family: 'Mononoki Nerd Font', 'Symbols Nerd Font Mono', monospace; 
     font-size: 1.1em;
     font-weight: normal;
     min-height: 0;
@@ -44,19 +44,16 @@
     color: #c4aead;
     font-weight: bold;
 }
-
+/*
 #tray {
   background-color: @base02;
-}
-
-#tray * {
   padding: 0 6px;
   border-left: 1px solid @base00;
 }
 
 #tray *:first-child {
   border-left: none;
-}
+}*/
 
 #custom-media,
 #custom-notification,
@@ -68,21 +65,16 @@
 #cpu,
 #backlight,
 #memory,
-#tray,
 #idle_inhibitor,
 #temperature,
 #custom-scratchpad_indicator {
-	padding: 0 6px;
+	padding: 0 10px;
     color: @base02;
     background-color: @base03;
 }
 
 #custom-media {
     background-color: #66cc99;
-}
-
-#battery {
-    color: #9ece6a;
 }
 
 #battery.charging {
