@@ -17,7 +17,7 @@
   </core>
 
   <placement>
-    <policy>automatic</policy>
+    <policy>cascade</policy>
   </placement>
 
   <!-- <font><theme> can be defined without an attribute to set all places -->

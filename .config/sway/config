@@ -22,9 +22,9 @@
     # Note: pass the final command to swaymsg so that the resulting window can be opened
     #       on the original workspace that the command was run on.
     exec /usr/bin/python3 /usr/bin/ulauncher --hide-window 1 > ~/.logs/ulauncher.log 2>&1
-    set $menu ulauncher-toggle
+    #set $menu ulauncher-toggle
+    set $menu wmenu-run
     
-    #set $menu wofi --show run 
     set $wallpaper ~/.config/sway/background
     #set $lock gtklock -d -s $HOME/.config/gtklock/style.css
     set $lock swaylock -f -i $wallpaper -s fill --indicator-radius 80
@@ -83,7 +83,12 @@
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec $menu -bi \
+        -f 'CaskaydiaCove Nerd Font Mono 19' \
+        -p 'RUN: ' \
+        -N 525252 -n fafafa \
+        -M 373737 -m fafafa \
+        -S fafafa -s 525252
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -272,8 +277,6 @@ mode "$mode_screenshot" {
     bindsym Escape mode "default"
 }
 
-#bindsym --release Print exec --no-startup-id flameshot gui
-
 #
 # Gaps
 #
@@ -298,7 +301,6 @@ mode "$mode_screenshot" {
     bindsym --locked XF86AudioNext exec playerctl next
     bindsym --locked XF86AudioPrev exec playerctl previous
     bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle # mute mic
-    #bindsym $mod+c exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle # mute mic
     
 #
 # Status Bar:
@@ -339,15 +341,12 @@ mode "$mode_screenshot" {
     assign [app_id="foot"] $ws1
     assign [app_id="firefox"] $ws2
     assign [app_id="org.qutebrowser.qutebrowser"] $ws2
-    assign [class="Brave-browser"] $ws2
-    assign [app_id="org.gnome.Nautilus"] $ws3
     assign [app_id="org.kde.dolphin"] $ws3
     assign [app_id="texstudio"] $ws4
     assign [app_id="libreoffice-startcenter"] $ws4
     assign [class="Code"] $ws5
     assign [class="jetbrains-idea-ce"] $ws5
     assign [class="jetbrains-studio"] $ws5
-    assign [app_id="evince"] $ws6
     assign [app_id="org.kde.okular"] $ws6
     assign [app_id="qBittorrent"] $ws7
     assign [app_id="Qemu-system-x86_64"] $ws8
@@ -362,12 +361,10 @@ mode "$mode_screenshot" {
 #
     bindsym $mod+F1 exec $term -e htop
     bindsym $mod+F2 exec firefox
-    bindsym $mod+Shift+F2 exec brave
+    bindsym $mod+Shift+F2 exec google-chrome-stable 
     bindsym $mod+F3 exec dolphin
     bindsym $mod+F4 exec texstudio
     bindsym $mod+F5 exec code
-    bindsym $mod+Shift+F5 exec idea-ce
-    bindsym $mod+F8 exec virtualbox
     bindsym $mod+F10 exec spotify
 
 #
@@ -386,9 +383,6 @@ mode "$mode_screenshot" {
     for_window [window_type="splash"] floating enable
     for_window [window_type="notification"] floating enable
     for_window [class="Spotify"] move to workspace number $ws10
-    for_window [app_id="flameshot"] floating enable, fullscreen disable, move absolute position 0 0, border pixel 0
-    for_window [app_id="ulauncher"] floating enable, border none 
-    #for_window [title="Ulauncher - Application Launcher"] floating enable, border none 
 #
 # Execs
 #
@@ -399,7 +393,7 @@ mode "$mode_screenshot" {
     exec --no-startup-id foot --server
 
     # Autotiling
-    exec --no-startup-id autotiling
+    exec --no-startup-id autotiling -w 1 3 5 7 9 -l 2
 
     # Wallpaper
     exec ~/.azotebg
@@ -411,9 +405,6 @@ mode "$mode_screenshot" {
 
     bindsym $mod+Shift+n exec swaync-client -t -sw
 
-    # Screenshot tool
-    #exec --no-startup-id flameshot
-    
     # Cliphist
     exec --no-startup-id wl-paste --watch cliphist store
     
