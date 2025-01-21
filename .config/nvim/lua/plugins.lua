@@ -21,6 +21,7 @@ Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
 Plug('neovim/nvim-lspconfig')
 Plug('nvim-tree/nvim-web-devicons')
+Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 
 vim.call('plug#end')
 
