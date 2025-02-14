@@ -26,7 +26,7 @@
     set $menu wmenu-run
     
     set $wallpaper ~/.config/sway/background
-    set $lock swaylock -f -i #525252 -s fill --indicator-radius 80
+    set $lock swaylock -f -i $HOME/.config/sway/background --indicator-radius 80
 
     # Enable xwayland
     xwayland enable
@@ -51,7 +51,7 @@
                     before-sleep '$lock'
 
     # lock screen on 
-    bindswitch --reload --locked lid:on exec $lock
+    bindswitch --reload --locked lid:on exec '$lock'
 
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off

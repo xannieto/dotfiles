@@ -6,4 +6,4 @@ set -a
 
 set +a
 
-exec /usr/bin/sway
+exec /usr/bin/sway | tee -a -i ~/.logs/sway.log
