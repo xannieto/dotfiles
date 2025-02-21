@@ -4,8 +4,8 @@
 kanshi >/dev/null 2>&1 &
 
 # panel
-waybar --config ~/.config/waybar/labwc.config \
-	--style ~/.config/waybar/labwc.style.css >/dev/null 2>&1 &
+waybar --config ~/.config/labwc/waybar/config \
+	--style ~/.config/labwc/style.css >/dev/null 2>&1 &
 
 # screen locking
 swayidle -w \

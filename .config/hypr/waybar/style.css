@@ -1,0 +1,86 @@
+@define-color base01 #525252;
+@define-color base02 #fafafa;
+@define-color base03 #373737;
+@define-color base04 #2E7CF7;
+
+/* Reset all styles */
+
+* {
+    transition: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+#waybar {
+    font-family: 'Mononoki Nerd Font', 'Symbols Nerd Font Mono', monospace; 
+    font-size: 1.1em;
+    font-weight: normal;
+    min-height: 0;
+}
+
+.modules-left, .modules-center, .modules-right { 
+    border: 2px solid;
+    border-color: rgba(250, 250, 250, 1);
+    border-radius: 5px;
+    color: @base02;
+    background-color: @base03;
+}
+
+.module {
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+#workspaces button {
+    color: @base02;
+    padding: 0 12px;
+}
+
+#workspaces button.active {
+    color: @base02;
+    background-color: @base01;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+	color: @base02;
+    background-color: @base04; 
+}
+
+#workspaces button.urgent {
+    color: #c4aead;
+    font-weight: bold;
+}
+
+#custom-media {
+    background-color: #66cc99;
+}
+
+#battery.charging {
+    background-color: #9ece6a;
+    color: #ffffff;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
