@@ -21,6 +21,7 @@ Plug('saadparwaiz1/cmp_luasnip')
 Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
 Plug('nvim-tree/nvim-web-devicons')
+Plug('catppuccin/nvim', {['as'] = 'catpuccin'})
 
 vim.call('plug#end')
 

@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'clangd', 'lua_ls', 'quick_lint_js', 'tsserver', 'html', 'cssls', 'angularls', 'bashls', 'marksman' },
+    ensure_installed = { 'pylsp', 'clangd', 'lua_ls', 'bashls', 'marksman' },
 })
 
 
@@ -66,20 +66,12 @@ lspconfig.pylsp.setup({
 	on_attach = on_attach,
 })
 
-require'lspconfig'.tsserver.setup{}
 require'lspconfig'.clangd.setup{}
-require'lspconfig'.angularls.setup{}
-require'lspconfig'.quick_lint_js.setup{}
 require'lspconfig'.bashls.setup{}
+
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
-}
-require'lspconfig'.cssls.setup {
-  capabilities = capabilities,
-}
 require'lspconfig'.lua_ls.setup{}
 require'lspconfig'.marksman.setup{}
