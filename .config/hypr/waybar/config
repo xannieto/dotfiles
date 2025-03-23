@@ -21,7 +21,8 @@
     "modules-left": [
         "cpu",
         "memory",
-        "temperature"
+        "temperature",
+        "hyprland/submap"
     ],
 
     "modules-center": ["custom/media", "hyprland/workspaces"],
@@ -123,15 +124,11 @@
         "tooltip-format": "{ipaddr}"
     },
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
-        "tooltip": false
-    },
-
     "hyprland/workspaces": {
         "all-outputs": false,
         "disable-scroll": false,
         "format": "{icon}",
+        "show-special": true,
         "format-icons": {
             "1": "1", 
             "2": "2", 
@@ -142,10 +139,8 @@
 			"7": "7",
 			"8": "8",
 			"9": "9",
-			"10": "10"
-            //"urgent": "",
-            //"focused": "",
-            //"default": ""
+			"10": "10",
+            "magic": "S"
         }
     }, 
     
@@ -208,6 +203,12 @@
 	        "activated": "",
 	        "deactivated": ""
 	    }
-    }
+    },
 
+    "hyprland/submap": {
+        "format": "Mode:  {}",
+        "max-length": 8,
+        "tooltip": false
+    }
+    
 }

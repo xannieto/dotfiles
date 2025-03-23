@@ -59,8 +59,7 @@
 }
 
 #battery.charging {
-    background-color: #9ece6a;
-    color: #ffffff;
+    color: #9ece6a;
 }
 
 #battery.warning:not(.charging) {
