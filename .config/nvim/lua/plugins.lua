@@ -4,8 +4,9 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug('sainnhe/gruvbox-material')
-Plug('vim-airline/vim-airline')
-Plug('vim-airline/vim-airline-themes')
+--Plug('vim-airline/vim-airline')
+--Plug('vim-airline/vim-airline-themes')
+Plug('nvim-lualine/lualine.nvim')
 Plug('nvim-tree/nvim-tree.lua')
 Plug('ryanoasis/vim-devicons')
 Plug('ibhagwan/fzf-lua')
@@ -52,3 +53,10 @@ require("nvim-tree").setup({
 
 vim.keymap.set("n", "<c-P>",
   "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+
+require("lualine").setup({
+    options = {
+        component_separators = { left = '|', right = '|'},
+        section_separators = { left = '', right = ''},
+    }
+})

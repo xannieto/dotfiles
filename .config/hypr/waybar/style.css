@@ -17,25 +17,25 @@
     font-family: 'Mononoki Nerd Font', 'Symbols Nerd Font Mono', monospace; 
     font-size: 1.1em;
     font-weight: normal;
-    min-height: 0;
-}
-
-.modules-left, .modules-center, .modules-right { 
     border: 2px solid;
     border-color: rgba(250, 250, 250, 1);
-    border-radius: 5px;
+    border-radius: 10px;
     color: @base02;
     background-color: @base03;
 }
 
 .module {
-    border-radius: 5px;
     padding: 0 10px;
+    margin: 0;
 }
+
 
 #workspaces button {
     color: @base02;
     padding: 0 12px;
+    background: transparent;
+    border-bottom: 2px solid rgba(250, 250, 250, 1);
+    border-top: 2px solid rgba(250, 250, 250, 1);
 }
 
 #workspaces button.active {
@@ -63,8 +63,7 @@
 }
 
 #battery.warning:not(.charging) {
-    background-color: #f7768e;
-    color: #24283b;
+    color: #f7768e;
 }
 
 #mpd {
