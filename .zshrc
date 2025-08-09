@@ -120,7 +120,7 @@ function start_agent {
     echo "succeeded"
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add
+    /usr/bin/ssh-add ~/.ssh/xannieto
 }
 
 # Source SSH settings, if applicable
@@ -139,3 +139,6 @@ alias ip='ip -c'
 alias cal='cal -m --color=always'
 #alias grep='grep --color=auto'
 
+
+# Created by `pipx` on 2025-07-01 19:56:59
+export PATH="$PATH:/home/xan/.local/bin"

@@ -16,7 +16,7 @@
     set $right l
     
     # Your preferred terminal emulator
-    set $term footclient 
+    set $term kitty
 
     # Your preferred application launcher
     # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -340,6 +340,7 @@ mode "$mode_screenshot" {
 # swaymsg -t get_tree | grep -E "app_id|class"
     assign [app_id="foot"] $ws1
     assign [app_id="firefox"] $ws2
+    assign [app_id="zen"] $ws2
     assign [app_id="org.qutebrowser.qutebrowser"] $ws2
     assign [app_id="org.kde.dolphin"] $ws3
     assign [app_id="texstudio"] $ws4
@@ -360,7 +361,7 @@ mode "$mode_screenshot" {
 # Custom shortcuts
 #
     bindsym $mod+F1 exec $term -e htop
-    bindsym $mod+F2 exec firefox
+    bindsym $mod+F2 exec zen-browser
     bindsym $mod+Shift+F2 exec google-chrome-stable 
     bindsym $mod+F3 exec dolphin
     bindsym $mod+F4 exec texstudio

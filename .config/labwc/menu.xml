@@ -1,83 +1,887 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu>
-  <menu id="root-menu" label="root-menu">
-    <item label="Dolphin" icon="org.kde.dolphin">
-      <action name="Execute"><command>dolphin</command></action>
+<menu id="root-menu" label="root-menu">
+  <menu id="Accessories" label="Accessories" icon="applications-accessories">
+    <item label="Ark" icon="ark">
+      <action name="Execute"><command>ark</command></action>
     </item>
-
-    <item label="Terminal" icon="foot">
-      <action name="Execute"><command>footclient</command></action>
+    <item label="AutoFirma" icon="autofirma">
+      <action name="Execute"><command>autofirma</command></action>
     </item>
-    
+    <item label="Azote" icon="azote">
+      <action name="Execute"><command>azote</command></action>
+    </item>
+    <item label="DB Browser for SQLite" icon="sqlitebrowser">
+      <action name="Execute"><command>sqlitebrowser</command></action>
+    </item>
+    <item label="Emoji Selector" icon="preferences-desktop-emoticons">
+      <action name="Execute"><command>plasma-emojier</command></action>
+    </item>
+    <item label="Gammastep Indicator" icon="gammastep">
+      <action name="Execute"><command>gammastep-indicator</command></action>
+    </item>
+    <item label="Kate" icon="kate">
+      <action name="Execute"><command>kate -b</command></action>
+    </item>
+    <item label="KCalc" icon="accessories-calculator">
+      <action name="Execute"><command>kcalc</command></action>
+    </item>
+    <item label="KeePassXC" icon="keepassxc">
+      <action name="Execute"><command>keepassxc</command></action>
+    </item>
+    <item label="Kvantum Manager" icon="kvantum">
+      <action name="Execute"><command>kvantummanager</command></action>
+    </item>
+    <item label="KWrite" icon="kwrite">
+      <action name="Execute"><command>kwrite</command></action>
+    </item>
+    <item label="LibreOffice" icon="libreoffice-startcenter">
+      <action name="Execute"><command>libreoffice</command></action>
+    </item>
+    <item label="Neovim" icon="nvim">
+      <action name="Execute"><command>nvim</command></action>
+    </item>
+    <item label="Spectacle" icon="spectacle">
+      <action name="Execute"><command>/usr/bin/spectacle</command></action>
+    </item>
+    <item label="Ulauncher" icon="ulauncher">
+      <action name="Execute"><command>env GDK_BACKEND=x11 /usr/bin/ulauncher --hide-window</command></action>
+    </item>
+  </menu> <!-- Accessories -->
+  <menu id="Development" label="Development" icon="applications-development">
+    <item label="CMake" icon="CMakeSetup">
+      <action name="Execute"><command>cmake-gui</command></action>
+    </item>
+    <item label="DB Browser for SQLite" icon="sqlitebrowser">
+      <action name="Execute"><command>sqlitebrowser</command></action>
+    </item>
+    <item label="DBeaver Community" icon="dbeaver">
+      <action name="Execute"><command>dbeaver</command></action>
+    </item>
+    <item label="Icon Explorer" icon="org.kde.iconexplorer">
+      <action name="Execute"><command>iconexplorer</command></action>
+    </item>
+    <item label="Kate" icon="kate">
+      <action name="Execute"><command>kate -b</command></action>
+    </item>
+    <item label="Plasma Engine Explorer" icon="plasma">
+      <action name="Execute"><command>plasmaengineexplorer</command></action>
+    </item>
+    <item label="Plasma Theme Explorer" icon="preferences-desktop-theme">
+      <action name="Execute"><command>plasmathemeexplorer</command></action>
+    </item>
+    <item label="Qt Assistant" icon="assistant">
+      <action name="Execute"><command>assistant6</command></action>
+    </item>
+    <item label="Qt D-Bus Viewer" icon="qdbusviewer">
+      <action name="Execute"><command>qdbusviewer6</command></action>
+    </item>
+    <item label="Qt Linguist" icon="linguist">
+      <action name="Execute"><command>linguist6</command></action>
+    </item>
+    <item label="Qt Widgets Designer" icon="designer">
+      <action name="Execute"><command>designer6</command></action>
+    </item>
+    <item label="StarUML" icon="staruml">
+      <action name="Execute"><command>/opt/StarUML/staruml</command></action>
+    </item>
+    <item label="UserFeedback Console" icon="search">
+      <action name="Execute"><command>UserFeedbackConsole</command></action>
+    </item>
+    <item label="Visual Studio Code" icon="visual-studio-code">
+      <action name="Execute"><command>/usr/bin/code</command></action>
+    </item>
+  </menu> <!-- Development -->
+  <menu id="Education" label="Education" icon="applications-science">
+    <item label="LibreOffice Math" icon="libreoffice-math">
+      <action name="Execute"><command>libreoffice --math</command></action>
+    </item>
+  </menu> <!-- Education -->
+  <menu id="Graphics" label="Graphics" icon="applications-graphics">
+    <item label="GNU Image Manipulation Program" icon="gimp">
+      <action name="Execute"><command>gimp-3.0</command></action>
+    </item>
+    <item label="Gwenview" icon="gwenview">
+      <action name="Execute"><command>gwenview</command></action>
+    </item>
+    <item label="Inkscape" icon="org.inkscape.Inkscape">
+      <action name="Execute"><command>inkscape</command></action>
+    </item>
+    <item label="LibreOffice Draw" icon="libreoffice-draw">
+      <action name="Execute"><command>libreoffice --draw</command></action>
+    </item>
+    <item label="Okular" icon="okular">
+      <action name="Execute"><command>okular</command></action>
+    </item>
+    <item label="Skanlite" icon="org.kde.skanlite">
+      <action name="Execute"><command>skanlite</command></action>
+    </item>
+  </menu> <!-- Graphics -->
+  <menu id="Internet" label="Internet" icon="applications-internet">
+    <item label="Advanced Network Configuration" icon="preferences-system-network">
+      <action name="Execute"><command>nm-connection-editor</command></action>
+    </item>
+    <item label="Avahi SSH Server Browser" icon="network-wired">
+      <action name="Execute"><command>/usr/bin/bssh</command></action>
+    </item>
+    <item label="Avahi VNC Server Browser" icon="network-wired">
+      <action name="Execute"><command>/usr/bin/bvnc</command></action>
+    </item>
     <item label="Firefox" icon="firefox">
       <action name="Execute"><command>/usr/lib/firefox/firefox</command></action>
     </item>
-    
-    <item label="VS Code" icon="visual-studio-code">
-      <action name="Execute"><command>/usr/bin/code</command></action>
+    <item label="Google Chrome" icon="google-chrome">
+      <action name="Execute"><command>/usr/bin/google-chrome-stable</command></action>
     </item>
-    
+    <item label="KDE Connect" icon="kdeconnect">
+      <action name="Execute"><command>kdeconnect-app</command></action>
+    </item>
+    <item label="KDE Connect Indicator" icon="kdeconnect">
+      <action name="Execute"><command>kdeconnect-indicator</command></action>
+    </item>
+    <item label="KDE Connect SMS" icon="kdeconnect">
+      <action name="Execute"><command>kdeconnect-sms</command></action>
+    </item>
+    <item label="qBittorrent" icon="qbittorrent">
+      <action name="Execute"><command>qbittorrent</command></action>
+    </item>
+    <item label="Signal" icon="signal-desktop">
+      <action name="Execute"><command>signal-desktop --</command></action>
+    </item>
+    <item label="Telegram" icon="org.telegram.desktop">
+      <action name="Execute"><command>telegram-desktop --</command></action>
+    </item>
+    <item label="Wireshark" icon="org.wireshark.Wireshark">
+      <action name="Execute"><command>wireshark</command></action>
+    </item>
+  </menu> <!-- Internet -->
+  <menu id="Multimedia" label="Multimedia" icon="applications-multimedia">
+    <item label="Audacity" icon="audacity">
+      <action name="Execute"><command>env GDK_BACKEND=x11 UBUNTU_MENUPROXY=0 audacity</command></action>
+    </item>
+    <item label="Easy Effects" icon="com.github.wwmm.easyeffects">
+      <action name="Execute"><command>easyeffects</command></action>
+    </item>
+    <item label="Kdenlive" icon="kdenlive">
+      <action name="Execute"><command>kdenlive</command></action>
+    </item>
+    <item label="mpv Media Player" icon="mpv">
+      <action name="Execute"><command>mpv --player-operation-mode=pseudo-gui --</command></action>
+    </item>
+    <item label="OBS Studio" icon="com.obsproject.Studio">
+      <action name="Execute"><command>obs</command></action>
+    </item>
+    <item label="Qt V4L2 test Utility" icon="qv4l2">
+      <action name="Execute"><command>qv4l2</command></action>
+    </item>
+    <item label="Qt V4L2 video capture utility" icon="qvidcap">
+      <action name="Execute"><command>qvidcap</command></action>
+    </item>
+    <item label="Qtractor" icon="org.rncbc.qtractor">
+      <action name="Execute"><command>qtractor</command></action>
+    </item>
     <item label="Spotify" icon="spotify-client">
       <action name="Execute"><command>spotify --uri=</command></action>
     </item>
-    
-    <separator />
-    
-    <item label="Reconfigure">
-      <action name="Reconfigure" />
+    <item label="VLC media player" icon="vlc">
+      <action name="Execute"><command>/usr/bin/vlc --started-from-file</command></action>
     </item>
-
-    <separator />
-
-    <item label="Lock">
-        <action name="Execute">
-            <command>swaylock -f -i /home/xan/.config/sway/background --indicator-radius 80</command>
-        </action>
+    <item label="Volume Control" icon="multimedia-volume-control">
+      <action name="Execute"><command>pavucontrol</command></action>
     </item>
-    
-    <item label="Exit">
-      <action name="Exit" />
+  </menu> <!-- Multimedia -->
+  <menu id="Office" label="Office" icon="applications-office">
+    <item label="LibreOffice" icon="libreoffice-startcenter">
+      <action name="Execute"><command>libreoffice</command></action>
     </item>
-    
-    <item label="Reboot">
-        <action name="Execute" command="systemctl reboot" />
+    <item label="LibreOffice Base" icon="libreoffice-base">
+      <action name="Execute"><command>libreoffice --base</command></action>
     </item>
-    <item label="Suspend">
-        <action name="Execute">
-            <command>sh -c 'waylock -f -i /home/xan/.config/sway/background --indicator-radius 80; systemctl suspend'</command>
-        </action>
+    <item label="LibreOffice Calc" icon="libreoffice-calc">
+      <action name="Execute"><command>libreoffice --calc</command></action>
     </item>
-    <item label="Poweroff">
-      <action name="Execute" command="systemctl -i poweroff" />
+    <item label="LibreOffice Draw" icon="libreoffice-draw">
+      <action name="Execute"><command>libreoffice --draw</command></action>
     </item>
-
-  </menu> <!-- root-menu -->
-
-  <menu id="screenshot-menu" label="screenshot-menu">
-    <item label="Output">
-      <action name="Execute">
-        <command>sh -c 'grimshot copy output; wl-paste | swappy -f -'</command>
-      </action>
+    <item label="LibreOffice Impress" icon="libreoffice-impress">
+      <action name="Execute"><command>libreoffice --impress</command></action>
     </item>
-    <item label="Area">
-      <action name="Execute">
-        <command>sh -c 'grimshot copy area; wl-paste | swappy -f -'</command>
-      </action>
+    <item label="LibreOffice Math" icon="libreoffice-math">
+      <action name="Execute"><command>libreoffice --math</command></action>
     </item>
-    <item label="Window">
-      <action name="Execute">
-        <command>sh -c 'grimshot copy window; wl-paste | swappy -f -'</command>
-      </action>
+    <item label="LibreOffice Writer" icon="libreoffice-writer">
+      <action name="Execute"><command>libreoffice --writer</command></action>
     </item>
-    <item label="Active">
-      <action name="Execute">
-        <command>sh -c 'grimshot copy active; wl-paste | swappy -f -'</command>
-      </action>
+    <item label="Okular" icon="okular">
+      <action name="Execute"><command>okular</command></action>
     </item>
-    <item label="Screen">
-      <action name="Execute">
-        <command>sh -c 'grimshot copy screen; wl-paste | swappy -f -'</command>
-      </action>
+  </menu> <!-- Office -->
+  <menu id="Settings" label="Settings" icon="preferences-desktop">
+    <item label="Advanced Network Configuration" icon="preferences-system-network">
+      <action name="Execute"><command>nm-connection-editor</command></action>
     </item>
-  </menu>
+    <item label="Azote" icon="azote">
+      <action name="Execute"><command>azote</command></action>
+    </item>
+    <item label="GTK Settings" icon="nwg-look">
+      <action name="Execute"><command>nwg-look</command></action>
+    </item>
+    <item label="KDE Connect Settings" icon="kdeconnect">
+      <action name="Execute"><command>kdeconnect-settings</command></action>
+    </item>
+    <item label="KDE System Settings" icon="preferences-system">
+      <action name="Execute"><command>systemsettings</command></action>
+    </item>
+    <item label="Kvantum Manager" icon="kvantum">
+      <action name="Execute"><command>kvantummanager</command></action>
+    </item>
+    <item label="Manage Printing" icon="cups">
+      <action name="Execute"><command>xdg-open http://localhost:631/</command></action>
+    </item>
+    <item label="Qt6 Settings" icon="preferences-desktop-theme">
+      <action name="Execute"><command>qt6ct</command></action>
+    </item>
+    <item label="System Settings" icon="preferences-system">
+      <action name="Execute"><command>systemsettings</command></action>
+    </item>
+    <item label="Volume Control" icon="multimedia-volume-control">
+      <action name="Execute"><command>pavucontrol</command></action>
+    </item>
+    <item label="Wacom Tablet finder" icon="preferences-desktop-tablet">
+      <action name="Execute"><command>kde_wacom_tabletfinder</command></action>
+    </item>
+  </menu> <!-- Settings -->
+  <menu id="System" label="System" icon="applications-system">
+    <item label="Avahi Zeroconf Browser" icon="network-wired">
+      <action name="Execute"><command>/usr/bin/avahi-discover</command></action>
+    </item>
+    <item label="Configurador FNMT" icon="configuradorfnmt">
+      <action name="Execute"><command>configuradorfnmt</command></action>
+    </item>
+    <item label="Crashed Processes Viewer" icon="tools-report-bug">
+      <action name="Execute"><command>drkonqi-coredump-gui</command></action>
+    </item>
+    <item label="Discover" icon="plasmadiscover">
+      <action name="Execute"><command>plasma-discover</command></action>
+    </item>
+    <item label="Dolphin" icon="org.kde.dolphin">
+      <action name="Execute"><command>dolphin</command></action>
+    </item>
+    <item label="Foot" icon="foot">
+      <action name="Execute"><command>foot</command></action>
+    </item>
+    <item label="Foot Client" icon="foot">
+      <action name="Execute"><command>footclient</command></action>
+    </item>
+    <item label="Foot Server" icon="foot">
+      <action name="Execute"><command>foot --server</command></action>
+    </item>
+    <item label="GParted" icon="gparted">
+      <action name="Execute"><command>/usr/bin/gparted</command></action>
+    </item>
+    <item label="Hardware Locality lstopo" icon="hwloc">
+      <action name="Execute"><command>lstopo</command></action>
+    </item>
+    <item label="Htop" icon="htop">
+      <action name="Execute"><command>htop</command></action>
+    </item>
+    <item label="Info Center" icon="hwinfo">
+      <action name="Execute"><command>kinfocenter</command></action>
+    </item>
+    <item label="kitty" icon="kitty">
+      <action name="Execute"><command>kitty</command></action>
+    </item>
+    <item label="Konsole" icon="utilities-terminal">
+      <action name="Execute"><command>konsole</command></action>
+    </item>
+    <item label="KWalletManager" icon="kwalletmanager">
+      <action name="Execute"><command>kwalletmanager5</command></action>
+    </item>
+    <item label="LSHW" icon="/usr/share/lshw/artwork/logo.svg">
+      <action name="Execute"><command>/usr/sbin/gtk-lshw</command></action>
+    </item>
+    <item label="Manage Printing" icon="cups">
+      <action name="Execute"><command>xdg-open http://localhost:631/</command></action>
+    </item>
+    <item label="Menu Editor" icon="kmenuedit">
+      <action name="Execute"><command>kmenuedit</command></action>
+    </item>
+    <item label="OpenJDK Java 11 Console" icon="java11-openjdk">
+      <action name="Execute"><command>/usr/lib/jvm/java-11-openjdk/bin/jconsole</command></action>
+    </item>
+    <item label="OpenJDK Java 11 Shell" icon="java11-openjdk">
+      <action name="Execute"><command>/usr/lib/jvm/java-11-openjdk/bin/jshell</command></action>
+    </item>
+    <item label="OpenJDK Java 17 Console" icon="java17-openjdk">
+      <action name="Execute"><command>/usr/lib/jvm/java-17-openjdk/bin/jconsole</command></action>
+    </item>
+    <item label="OpenJDK Java 17 Shell" icon="java17-openjdk">
+      <action name="Execute"><command>/usr/lib/jvm/java-17-openjdk/bin/jshell</command></action>
+    </item>
+    <item label="System Monitor" icon="utilities-system-monitor">
+      <action name="Execute"><command>plasma-systemmonitor</command></action>
+    </item>
+    <item label="UXTerm" icon="xterm-color_48x48">
+      <action name="Execute"><command>uxterm</command></action>
+    </item>
+    <item label="Virtual Machine Manager" icon="virt-manager">
+      <action name="Execute"><command>virt-manager</command></action>
+    </item>
+    <item label="XTerm" icon="xterm-color_48x48">
+      <action name="Execute"><command>xterm</command></action>
+    </item>
+  </menu> <!-- System -->
+  <menu id="Other" label="Other">
+    <item label="12 Channel Spectrum Analyzer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-spectrum-analyzer-x12</command></action>
+    </item>
+    <item label="16 Channel Spectrum Analyzer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-spectrum-analyzer-x16</command></action>
+    </item>
+    <item label="A/B Tester x2 Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-ab-tester-x2-mono</command></action>
+    </item>
+    <item label="A/B Tester x2 Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-ab-tester-x2-stereo</command></action>
+    </item>
+    <item label="A/B Tester x4 Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-ab-tester-x4-mono</command></action>
+    </item>
+    <item label="A/B Tester x4 Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-ab-tester-x4-stereo</command></action>
+    </item>
+    <item label="A/B Tester x8 Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-ab-tester-x8-mono</command></action>
+    </item>
+    <item label="A/B Tester x8 Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-ab-tester-x8-stereo</command></action>
+    </item>
+    <item label="Artistic Delay Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-art-delay-mono</command></action>
+    </item>
+    <item label="Artistic Delay Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-art-delay-stereo</command></action>
+    </item>
+    <item label="Autogain Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-autogain-mono</command></action>
+    </item>
+    <item label="Autogain Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-autogain-stereo</command></action>
+    </item>
+    <item label="Beat Breather" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-beat-breather-stereo</command></action>
+    </item>
+    <item label="Beat Breather" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-beat-breather-mono</command></action>
+    </item>
+    <item label="Chorus Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-chorus-mono</command></action>
+    </item>
+    <item label="Chorus Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-chorus-stereo</command></action>
+    </item>
+    <item label="Clipper Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-clipper-mono</command></action>
+    </item>
+    <item label="Clipper Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-clipper-stereo</command></action>
+    </item>
+    <item label="Direct Out 12 Instrument Sample Player" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-multisampler-x12-do</command></action>
+    </item>
+    <item label="Direct Out 24 Instrument Sample Player" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-multisampler-x24-do</command></action>
+    </item>
+    <item label="Direct out 48 Instrument Sample Player" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-multisampler-x48-do</command></action>
+    </item>
+    <item label="Eight Channel Spectrum Analyzer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-spectrum-analyzer-x8</command></action>
+    </item>
+    <item label="Flanger Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-flanger-mono</command></action>
+    </item>
+    <item label="Flanger Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-flanger-stereo</command></action>
+    </item>
+    <item label="Four Channel Spectrum Analyzer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-spectrum-analyzer-x4</command></action>
+    </item>
+    <item label="GOTT Compressor LeftRight" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gott-compressor-lr</command></action>
+    </item>
+    <item label="GOTT Compressor LeftRight" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gott-compressor-lr</command></action>
+    </item>
+    <item label="GOTT Compressor MidSide" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gott-compressor-ms</command></action>
+    </item>
+    <item label="GOTT Compressor MidSide" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gott-compressor-ms</command></action>
+    </item>
+    <item label="GOTT Compressor Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gott-compressor-mono</command></action>
+    </item>
+    <item label="GOTT Compressor Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gott-compressor-mono</command></action>
+    </item>
+    <item label="GOTT Compressor Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gott-compressor-stereo</command></action>
+    </item>
+    <item label="GOTT Compressor Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gott-compressor-stereo</command></action>
+    </item>
+    <item label="Latency Meter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-latency-meter</command></action>
+    </item>
+    <item label="LSP Mixer x16 Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mixer-x16-mono</command></action>
+    </item>
+    <item label="LSP Mixer x16 Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mixer-x16-stereo</command></action>
+    </item>
+    <item label="LSP Mixer x4 Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mixer-x4-mono</command></action>
+    </item>
+    <item label="LSP Mixer x4 Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mixer-x4-stereo</command></action>
+    </item>
+    <item label="LSP Mixer x8 Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mixer-x8-mono</command></action>
+    </item>
+    <item label="LSP Mixer x8 Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mixer-x8-stereo</command></action>
+    </item>
+    <item label="Mid-Side Crossover" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-crossover-ms</command></action>
+    </item>
+    <item label="Mid-Side Split Multiband Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-compressor-ms</command></action>
+    </item>
+    <item label="Mid-Side Split Multiband Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-expander-ms</command></action>
+    </item>
+    <item label="Mid-Side Split Multiband Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-gate-ms</command></action>
+    </item>
+    <item label="Mid-Side Split Multiband Sidechain Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-expander-ms</command></action>
+    </item>
+    <item label="Mid-Side Split Multiband Sidechain Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-gate-ms</command></action>
+    </item>
+    <item label="Mid-Side Split Stereo Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-compressor-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo 16 Band Graphic Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-graph-equalizer-x16-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo 16 Band Parametric Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-para-equalizer-x16-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo 32 Band Graphic Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-graph-equalizer-x32-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo 32 Band Parametric Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-para-equalizer-x32-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-dyna-processor-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo Dynamic Sidechain Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-dyna-processor-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-expander-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gate-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo Sidechain Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-expander-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo Sidechain Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-gate-ms</command></action>
+    </item>
+    <item label="Mid-Side Stereo Sidechain Multiband Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-compressor-ms</command></action>
+    </item>
+    <item label="Mid-Side Stero Sidechain Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-compressor-ms</command></action>
+    </item>
+    <item label="Mono 16 Band Graphic Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-graph-equalizer-x16-mono</command></action>
+    </item>
+    <item label="Mono 16 Band Graphic Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-graph-equalizer-x32-mono</command></action>
+    </item>
+    <item label="Mono 16 Band Parametric Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-para-equalizer-x16-mono</command></action>
+    </item>
+    <item label="Mono 32 Band Parametric Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-para-equalizer-x32-mono</command></action>
+    </item>
+    <item label="Mono Audio Profiler" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-profiler-mono</command></action>
+    </item>
+    <item label="Mono Audio Trigger" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-trigger-mono</command></action>
+    </item>
+    <item label="Mono Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-compressor-mono</command></action>
+    </item>
+    <item label="Mono Convolution Reverb" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-impulse-reverb-mono</command></action>
+    </item>
+    <item label="Mono Crossover" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-crossover-mono</command></action>
+    </item>
+    <item label="Mono Delay Compensator" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-comp-delay-mono</command></action>
+    </item>
+    <item label="Mono Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-dyna-processor-mono</command></action>
+    </item>
+    <item label="Mono Dynamic Sidechain Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-dyna-processor-mono</command></action>
+    </item>
+    <item label="Mono Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-expander-mono</command></action>
+    </item>
+    <item label="Mono Filter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-filter-mono</command></action>
+    </item>
+    <item label="Mono Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gate-mono</command></action>
+    </item>
+    <item label="Mono Impulse Responses" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-impulse-responses-mono</command></action>
+    </item>
+    <item label="Mono Limiter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-limiter-mono</command></action>
+    </item>
+    <item label="Mono Loudness Compensator" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-loud-comp-mono</command></action>
+    </item>
+    <item label="Mono MIDI Sample Player" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sampler-mono</command></action>
+    </item>
+    <item label="Mono MIDI Trigger" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-trigger-midi-mono</command></action>
+    </item>
+    <item label="Mono Multiband Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-compressor-mono</command></action>
+    </item>
+    <item label="Mono Multiband Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-expander-mono</command></action>
+    </item>
+    <item label="Mono Multiband Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-gate-mono</command></action>
+    </item>
+    <item label="Mono Multiband Sidechain Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-expander-mono</command></action>
+    </item>
+    <item label="Mono Multiband Sidechain Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-gate-mono</command></action>
+    </item>
+    <item label="Mono Room Impulse Response Builder" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-room-builder-mono</command></action>
+    </item>
+    <item label="Mono Sidechain Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-compressor-mono</command></action>
+    </item>
+    <item label="Mono Sidechain Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-expander-mono</command></action>
+    </item>
+    <item label="Mono Sidechain Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-gate-mono</command></action>
+    </item>
+    <item label="Mono Sidechain Limiter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-limiter-mono</command></action>
+    </item>
+    <item label="Mono Sidechain Multiband Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-compressor-mono</command></action>
+    </item>
+    <item label="Mono Signal Generator" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-oscillator-mono</command></action>
+    </item>
+    <item label="Mono Slap Delay" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-slap-delay-mono</command></action>
+    </item>
+    <item label="Mono Surge Filter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-surge-filter-mono</command></action>
+    </item>
+    <item label="Multiband Clipper Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-clipper-mono</command></action>
+    </item>
+    <item label="Multiband Clipper Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-clipper-mono</command></action>
+    </item>
+    <item label="Multiband Limiter Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-limiter-mono</command></action>
+    </item>
+    <item label="Multiband Limiter Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-limiter-stereo</command></action>
+    </item>
+    <item label="Multiband Limiter Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-limiter-stereo</command></action>
+    </item>
+    <item label="Multiband Mid-Side Split Stereo Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-dyna-processor-ms</command></action>
+    </item>
+    <item label="Multiband Mid-Side Stero Sidechain Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-dyna-processor-ms</command></action>
+    </item>
+    <item label="Multiband Mono Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-dyna-processor-mono</command></action>
+    </item>
+    <item label="Multiband Mono Sidechain Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-dyna-processor-mono</command></action>
+    </item>
+    <item label="Multiband Sidechain Limiter Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-limiter-mono</command></action>
+    </item>
+    <item label="Multiband Split Stereo Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-dyna-processor-lr</command></action>
+    </item>
+    <item label="Multiband Split Stereo Sidechain Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-dyna-processor-lr</command></action>
+    </item>
+    <item label="Multiband Stereo Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-dyna-processor-stereo</command></action>
+    </item>
+    <item label="Multiband Stero Sidechain Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-dyna-processor-stereo</command></action>
+    </item>
+    <item label="Noise Generator x1" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-noise-generator-x1</command></action>
+    </item>
+    <item label="Noise Generator x2" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-noise-generator-x2</command></action>
+    </item>
+    <item label="Noise Generator x4" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-noise-generator-x4</command></action>
+    </item>
+    <item label="One Channel Spectrum Analyzer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-spectrum-analyzer-x1</command></action>
+    </item>
+    <item label="Oscilloscope 1 Channel" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-oscilloscope-x1</command></action>
+    </item>
+    <item label="Oscilloscope 2 Channels" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-oscilloscope-x2</command></action>
+    </item>
+    <item label="Oscilloscope 4 Channels" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-oscilloscope-x4</command></action>
+    </item>
+    <item label="Phase Detector" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-phase-detector</command></action>
+    </item>
+    <item label="Referencer Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-referencer-mono</command></action>
+    </item>
+    <item label="Referencer Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-referencer-stereo</command></action>
+    </item>
+    <item label="Return Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-return-mono</command></action>
+    </item>
+    <item label="Return Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-return-stereo</command></action>
+    </item>
+    <item label="Send Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-send-mono</command></action>
+    </item>
+    <item label="Send Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-send-stereo</command></action>
+    </item>
+    <item label="Sidechain Autogain Mono" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-autogain-mono</command></action>
+    </item>
+    <item label="Sidechain Autogain Stereo" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-autogain-stereo</command></action>
+    </item>
+    <item label="Split Crossover" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-crossover-lr</command></action>
+    </item>
+    <item label="Split Multiband Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-compressor-lr</command></action>
+    </item>
+    <item label="Split Multiband Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-expander-lr</command></action>
+    </item>
+    <item label="Split Multiband Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-gate-lr</command></action>
+    </item>
+    <item label="Split Multiband Sidechain Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-expander-lr</command></action>
+    </item>
+    <item label="Split Multiband Sidechain Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-gate-lr</command></action>
+    </item>
+    <item label="Split Stereo 16 Band Graphic Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-graph-equalizer-x16-lr</command></action>
+    </item>
+    <item label="Split Stereo 16 Band Parametric Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-para-equalizer-x16-lr</command></action>
+    </item>
+    <item label="Split Stereo 32 Band Graphic Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-graph-equalizer-x32-lr</command></action>
+    </item>
+    <item label="Split Stereo 32 Band Parametric Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-para-equalizer-x32-lr</command></action>
+    </item>
+    <item label="Split Stereo Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-compressor-lr</command></action>
+    </item>
+    <item label="Split Stereo Delay Compensator" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-comp-delay-x2-stereo</command></action>
+    </item>
+    <item label="Split Stereo Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-dyna-processor-lr</command></action>
+    </item>
+    <item label="Split Stereo Dynamic Sidechain Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-dyna-processor-lr</command></action>
+    </item>
+    <item label="Split Stereo Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-expander-lr</command></action>
+    </item>
+    <item label="Split Stereo Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gate-lr</command></action>
+    </item>
+    <item label="Split Stereo Sidechain Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-compressor-lr</command></action>
+    </item>
+    <item label="Split Stereo Sidechain Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-expander-lr</command></action>
+    </item>
+    <item label="Split Stereo Sidechain Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-gate-lr</command></action>
+    </item>
+    <item label="Split Stereo Sidechain Multiband Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-compressor-lr</command></action>
+    </item>
+    <item label="Stereo 12 Instrument Sample Player" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-multisampler-x12</command></action>
+    </item>
+    <item label="Stereo 16 Band Graphic Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-graph-equalizer-x16-stereo</command></action>
+    </item>
+    <item label="Stereo 16 Band Parametric Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-para-equalizer-x16-stereo</command></action>
+    </item>
+    <item label="Stereo 24 Instrument Sample Player" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-multisampler-x24</command></action>
+    </item>
+    <item label="Stereo 32 Band Graphic Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-graph-equalizer-x32-stereo</command></action>
+    </item>
+    <item label="Stereo 32 Band Parametric Equalizer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-para-equalizer-x32-stereo</command></action>
+    </item>
+    <item label="Stereo 48 Instrument Sample Player" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-multisampler-x48</command></action>
+    </item>
+    <item label="Stereo Audio Profiler" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-profiler-stereo</command></action>
+    </item>
+    <item label="Stereo Audio Trigger" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-trigger-stereo</command></action>
+    </item>
+    <item label="Stereo Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-compressor-stereo</command></action>
+    </item>
+    <item label="Stereo Convolution Reverb" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-impulse-reverb-stereo</command></action>
+    </item>
+    <item label="Stereo Crossover" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-crossover-stereo</command></action>
+    </item>
+    <item label="Stereo Delay Compensator" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-comp-delay-stereo</command></action>
+    </item>
+    <item label="Stereo Dynamic Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-dyna-processor-stereo</command></action>
+    </item>
+    <item label="Stereo Dynamic Sidechain Processor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-dyna-processor-stereo</command></action>
+    </item>
+    <item label="Stereo Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-expander-stereo</command></action>
+    </item>
+    <item label="Stereo Filter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-filter-stereo</command></action>
+    </item>
+    <item label="Stereo Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-gate-stereo</command></action>
+    </item>
+    <item label="Stereo Impulse Responses" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-impulse-responses-stereo</command></action>
+    </item>
+    <item label="Stereo Limiter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-limiter-stereo</command></action>
+    </item>
+    <item label="Stereo Loudness Compensator" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-loud-comp-stereo</command></action>
+    </item>
+    <item label="Stereo MIDI Sample Player" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sampler-stereo</command></action>
+    </item>
+    <item label="Stereo MIDI Trigger" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-trigger-midi-stereo</command></action>
+    </item>
+    <item label="Stereo Multiband Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-compressor-stereo</command></action>
+    </item>
+    <item label="Stereo Multiband Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-expander-stereo</command></action>
+    </item>
+    <item label="Stereo Multiband Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-mb-gate-stereo</command></action>
+    </item>
+    <item label="Stereo Multiband Sidechain Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-expander-stereo</command></action>
+    </item>
+    <item label="Stereo Multiband Sidechain Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-gate-stereo</command></action>
+    </item>
+    <item label="Stereo Room Impulse Response Builder" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-room-builder-stereo</command></action>
+    </item>
+    <item label="Stereo Sidechain Expander" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-expander-stereo</command></action>
+    </item>
+    <item label="Stereo Sidechain Gate" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-gate-stereo</command></action>
+    </item>
+    <item label="Stereo Sidechain Limiter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-limiter-stereo</command></action>
+    </item>
+    <item label="Stereo Sidechain Multiband Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-mb-compressor-stereo</command></action>
+    </item>
+    <item label="Stereo Slap Delay" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-slap-delay-stereo</command></action>
+    </item>
+    <item label="Stereo Surge Filter" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-surge-filter-mono</command></action>
+    </item>
+    <item label="Stero Sidechain Compressor" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-sc-compressor-stereo</command></action>
+    </item>
+    <item label="Two Channel Spectrum Analyzer" icon="lsp-plugins">
+      <action name="Execute"><command>lsp-plugins-spectrum-analyzer-x2</command></action>
+    </item>
+    <item label="Welcome Center" icon="start-here-kde-plasma">
+      <action name="Execute"><command>plasma-welcome</command></action>
+    </item>
+  </menu> <!-- Other -->
+  <separator />
+  <item label="Reconfigure">
+    <action name="Reconfigure" />
+  </item>
+  <item label="Exit">
+    <action name="Exit" />
+  </item>
+</menu> <!-- root-menu -->
 </openbox_menu>

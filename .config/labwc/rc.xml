@@ -114,7 +114,7 @@
       <action name="NextWindow" />
     </keybind>
     <keybind key="W-Return">
-      <action name="Execute" command="footclient" />
+      <action name="Execute" command="kitty" />
     </keybind>
     <keybind key="W-d">
       <action name="Execute" command="tofi-drun --drun-launch=true" />
@@ -256,10 +256,10 @@
 
     <!-- Program Shorcuts  -->
     <keybind key="W-F1">
-        <action name="Execute" command="footclient -e htop" />
+        <action name="Execute" command="kitty -e htop" />
     </keybind>
     <keybind key="W-F2">
-        <action name="Execute" command="firefox" />
+        <action name="Execute" command="zen-browser" />
     </keybind>
     <keybind key="W-F3">
         <action name="Execute" command="dolphin" />
@@ -488,6 +488,9 @@
 		      <action name="ResizeTo" width="480" height="320" />
 		</windowRule>
         <windowRule identifier="foot">
+    		<action name="SendToDesktop" to="1" follow="no" />
+    	</windowRule>
+        <windowRule identifier="kitty">
     		<action name="SendToDesktop" to="1" follow="no" />
     	</windowRule>
         <windowRule identifier="firefox">

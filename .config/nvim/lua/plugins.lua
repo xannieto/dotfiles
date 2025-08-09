@@ -4,8 +4,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug('sainnhe/gruvbox-material')
-Plug('vim-airline/vim-airline')
-Plug('vim-airline/vim-airline-themes')
+Plug('nvim-lualine/lualine.nvim')
 Plug('nvim-tree/nvim-tree.lua')
 Plug('ryanoasis/vim-devicons')
 Plug('ibhagwan/fzf-lua')
@@ -22,6 +21,7 @@ Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
 Plug('nvim-tree/nvim-web-devicons')
 Plug('catppuccin/nvim', {['as'] = 'catpuccin'})
+Plug('lervag/vimtex')
 
 vim.call('plug#end')
 
@@ -49,6 +49,18 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+require('lualine').setup({
+    options = {
+        theme = "catppuccin",
+        component_separators = { left = '|', right = '|'},
+        section_separators = { left = '', right = ''},
+    }
+})
+
+-- Or with a generic interface:
+--vim.g.vimtex_view_general_viewer = 'okular'
+--vim.g.vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 
 vim.keymap.set("n", "<c-P>",
   "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
