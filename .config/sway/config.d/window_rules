@@ -1,0 +1,35 @@
+# Assigns
+# swaymsg -t get_tree | grep -E "app_id|class"
+assign [app_id="foot"] $ws1
+assign [app_id="firefox"] $ws2
+assign [app_id="zen"] $ws2
+assign [app_id="org.qutebrowser.qutebrowser"] $ws2
+assign [app_id="org.kde.dolphin"] $ws3
+assign [app_id="texstudio"] $ws4
+assign [app_id="libreoffice-startcenter"] $ws4
+assign [class="Code"] $ws5
+assign [class="jetbrains-idea-ce"] $ws5
+assign [class="jetbrains-studio"] $ws5
+assign [app_id="org.kde.okular"] $ws6
+assign [app_id="qBittorrent"] $ws7
+assign [app_id="Qemu-system-x86_64"] $ws8
+assign [class="TelegramDesktop"] $ws9
+assign [class="discord"] $ws9
+assign [app_id="evolution"] $ws9
+assign [app_id="vlc"] $ws9
+assign [class="Spotify"] $ws10
+
+# Fixes for some apps
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="About"] floating enable	
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_type="popup_menu"] floating enable
+for_window [window_type="tooltip"] floating enable
+for_window [window_type="splash"] floating enable
+for_window [window_type="notification"] floating enable
+for_window [class="Spotify"] move to workspace number $ws10

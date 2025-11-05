@@ -1,0 +1,4 @@
+exec --no-startup-id swayidle -w \
+    timeout 600 '$lock' \
+    timeout 1200 'swaymsg "output * dpms off" && systemctl suspend' resume 'swaymsg "output * dpms on"' \
+    before-sleep '$lock'

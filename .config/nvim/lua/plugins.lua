@@ -8,7 +8,6 @@ Plug('nvim-lualine/lualine.nvim')
 Plug('nvim-tree/nvim-tree.lua')
 Plug('ryanoasis/vim-devicons')
 Plug('ibhagwan/fzf-lua')
-Plug('navarasu/onedark.nvim')
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/nvim-cmp')
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -20,7 +19,6 @@ Plug('saadparwaiz1/cmp_luasnip')
 Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
 Plug('nvim-tree/nvim-web-devicons')
-Plug('catppuccin/nvim', {['as'] = 'catpuccin'})
 Plug('lervag/vimtex')
 
 vim.call('plug#end')
@@ -52,7 +50,7 @@ require("nvim-tree").setup({
 
 require('lualine').setup({
     options = {
-        theme = "catppuccin",
+        theme = "gruvbox-material",
         component_separators = { left = '|', right = '|'},
         section_separators = { left = '', right = ''},
     }

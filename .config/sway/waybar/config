@@ -1,83 +1,29 @@
-// =============================================================================
-//
-// Waybar configuration
-//
-// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
-//
-// =============================================================================
-
 {
-    // -------------------------------------------------------------------------
-    // Global configuration
-    // -------------------------------------------------------------------------
-
     "layer": "bottom",
-
     "position": "bottom",
-
-    // If height property would be not present, it'd be calculated dynamically
-    "height": 32,
-
     "modules-left": [
+        "sway/workspaces",
         "sway/mode",
-        "cpu",
-        "memory",
-        "temperature"
     ],
-
-    "modules-center": ["custom/media", "sway/workspaces"],
-
+    "modules-center": [],
     "modules-right": [
         "tray",
         "custom/notification",
         "custom/scratchpad_indicator",
-        //"backlight",
-		//"battery",
-        //"network",
+        "cpu",
+        "memory",
+        "temperature",
         "pulseaudio",
         "idle_inhibitor",
         "clock"
     ],
-
-    // -------------------------------------------------------------------------
-    // Modules
-    // -------------------------------------------------------------------------
-    
-    "battery": {
-        "interval": 10,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        // Connected to AC
-        "format": "{icon}  {capacity}%", // Icon: bolt
-        // Not connected to AC
-        "format-discharging": "{icon}  {capacity}%",
-        "format-charging": "{icon}    {capacity}%",
-        "format-icons": [
-            "", // Icon: battery-full
-            "", // Icon: battery-three-quarters
-            "", // Icon: battery-half
-            "", // Icon: battery-quarter
-            ""  // Icon: battery-empty
-        ],
-        "tooltip": true
-    },
-
-	"backlight": {
-    	"device": "intel_backlight",
-    	"format": "{icon} {percent}%",
-    	"format-icons": ["","","","","","","","","","","","","","",""]
-	},
-
     "clock": {
         "tooltip-format": "<tt>{calendar}</tt>",
-        "format": "  {:%H:%M}",
+        "format": "{:%H:%M}",
         "locale": "gl_ES.UTF-8",
         "on-click": "wl-copy $(date '+%Y-%m-%d')",
         "on-click-right": "wl-copy $(date '+%a %-d %h %H.%M')",
     },
-
     "cpu": {
         "interval": 5,
         "format": "  {usage}%", // Icon: microchip
@@ -86,7 +32,6 @@
           "critical": 85
         }
     },
-
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
@@ -107,7 +52,6 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-
     "custom/scratchpad_indicator": {
         "interval": 3,
         "exec": "swaymsg -t get_tree | jq -r '.nodes[] | select(.name == \"__i3\").nodes[] | select(.name == \"__i3_scratch\").floating_nodes | length'",
@@ -116,7 +60,6 @@
         "on-click-right": "swaymsg 'move scratchpad'",
         "tooltip": false
     },
-
     "memory": {
         "interval": 5,
         "format": " {}%", // Icon: memory
@@ -125,7 +68,6 @@
             "critical": 90
         }
     },
-
     "network": {
         "interval": 5,
         "format-wifi": "wifi: {ifname} ({signalStrength}%)", // Icon: wifi
@@ -133,43 +75,14 @@
         "format-disconnected": "x",
         "tooltip-format": "{ipaddr}"
     },
-
     "sway/mode": {
         "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
         "tooltip": false
     },
-
     "sway/workspaces": {
         "all-outputs": false,
         "disable-scroll": false,
         "format": "{icon}",
-        /*"persistent_workspaces": {
-            "1": [], 
-            "2": [], 
-            "3": [],
-            "4": [],
-            "5": [],
-			"6": [],
-			"7": [],
-			"8": [],
-			"9": [],
-			"10": []
-        },*/
-        /*"format-icons": {
-            "1": "", 
-            "2": "󰖟", 
-            "3": "",
-            "4": "",
-            "5": "",
-			"6": "",
-			"7": "",
-			"8": "",
-			"9": "",
-			"10": ""
-            //"urgent": "",
-            //"focused": "",
-            //"default": ""
-        }*/
         "format-icons": {
             "1": "1", 
             "2": "2", 
@@ -181,28 +94,11 @@
 			"8": "8",
 			"9": "9",
 			"10": "10"
-            //"urgent": "",
-            //"focused": "",
-            //"default": ""
         }
     }, 
-    
-    "custom/media": {
-        "format": "{icon} {}",
-        "escape": true,
-        "return-type": "json",
-        "max-length": 40,
-        "on-click": "playerctl play-pause",
-        "on-click-right": "playerctl stop",
-        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous",
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-    },
-
     "pulseaudio": {
         "scroll-step": 1,
-        "format": "{icon} {volume}%   {format_source}",
+        "format": "{icon} {volume}% {format_source}",
         "format-source" : " {volume}%",
         "format-source-muted" : "",
         "format-bluetooth": "{icon} {volume}%",
@@ -219,7 +115,6 @@
         "on-click": "pavucontrol",
         "ignored-sinks": ["Easy Effects Sink"]
     },
-
     "temperature": {
       "hwmon-path": "/sys/class/hwmon/hwmon3/temp3_input",
       "critical-threshold": 80,
@@ -234,12 +129,10 @@
       ],
       "tooltip": true
     },
-
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
-
     "idle_inhibitor": {
 	    "format": "{icon}",
 	    "format-icons": {
@@ -247,5 +140,4 @@
 	        "deactivated": ""
 	    }
     }
-
 }

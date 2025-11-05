@@ -1,0 +1,19 @@
+default_floating_border normal
+default_border normal
+title_align left
+
+# Gaps
+smart_gaps off
+smart_borders off
+gaps inner 0 
+gaps outer 0
+
+
+# Window color settings
+# class                 border          background      text    indicator
+client.focused          $bg2            $bg2            $fg     $bgalpha
+client.focused_inactive $bg2            $bg2            $fg4    $bgalpha
+client.unfocused        $darkgray       $darkgray       $fg4    $darkgrayalpha
+client.urgent           $purple         $purple         $fg     $purplealpha
+
+client.background       $bg2
