@@ -20,7 +20,7 @@ set $term kitty
 
 # Your preferred application launcher
 #set $menu ulauncher-toggle
-set $menu wmenu-run 
+set $menu rofi -show drun 
 
 set $wallpaper ~/.config/sway/background
 #set $lock gtklock -d -s $HOME/.config/gtklock/style.css
