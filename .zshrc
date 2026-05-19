@@ -137,7 +137,6 @@ fi
 alias ls='ls --color=auto'
 alias ip='ip -c'
 alias cal='cal -m --color=always'
-alias emacs='emacs -nw'
 #alias grep='grep --color=auto'
 
 

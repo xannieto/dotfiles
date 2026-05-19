@@ -31,7 +31,7 @@
 }
 
 #workspaces button {
-    padding: 0 1px;
+    padding: 0 4px;
     background-color: @darkgray;
     border: @darkgray solid 1px;
     color: @fg4;

@@ -5,6 +5,7 @@ input type:keyboard {
     xkb_layout es
     #xkb_capslock enabled
     xkb_numlock enabled
+    xkb_optionsctrl:nocaps
 }
 
 input type:touchpad {
