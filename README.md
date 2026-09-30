@@ -1,3 +1,5 @@
+**Migrated to: [https://gitlab.com/xannieto/dotfiles](https://gitlab.com/xannieto/dotfiles)**
+
 # Dotfiles
 
 This repository contains all dotfiles for my system. 
